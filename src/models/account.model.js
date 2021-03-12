@@ -24,7 +24,7 @@ const accountSchema = new Schema ({
     type: String,
     trim: true,
     lowercase: true,
-    require: true
+    required: true
   },
 
   roleId: {

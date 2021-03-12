@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const roleSchema = new Schema ({
-  roleName:{
+  role:{
     type: String,
     trim: true,
-    require: true
+    required: true
   }
-});
+}, {timestamps: true});
 
 const roleModel = mongoose.model('role', roleSchema);
 
