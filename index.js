@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 // Connect Database
-require('./src/configs/database');
+require('./src/config/database');
 const defaultAccount = require('./src/middleware/defaultAccount.middleware');
 
 // Import Routes
-const routes = require('./src/configs/routes');
+const routes = require('./src/config/routes');
 
 // Setting for accepting post form data (body-parser)
 // parse requests of content-type - application/json
