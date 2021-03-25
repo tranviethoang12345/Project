@@ -1,6 +1,6 @@
 // Create Router
 const router = require('express').Router();
-const modelAccount = require('../models/account.model');
+const modelAccount = require('../models/user.model');
 const modelRole = require('../models/role.model');
 
 router.get('/', async (req, res) => {
@@ -61,8 +61,6 @@ router.post('/role', async (req, res) => {
 
 router.post('/auth', async (req, res) => {
   try {
-  
-
     let result = await modelRole.findById("604b2d3f36b2fd0610004e0c");
 
     // gui len ten user -> query trong DB  -> UserObj -> lay ra duoc role -> luu vao 1 bien toan cuc

@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
 
-// Account
-const accountSchema = new Schema ({
+// User Detail
+const userSchema = new Schema ({
   username: {
     type: String, 
     unique: true,
@@ -27,10 +27,32 @@ const accountSchema = new Schema ({
     required: true
   },
 
+  fullName: {
+    type: String,
+    trim: true
+  },
+
+  image: {
+    type: String,
+    trim: true
+  },
+
+  dob: {
+    type: new Date("<YYYY-mm-dd>"),
+  },
+
+  gender: {
+    type: Number,
+    min: 1,
+    max: 3
+  },
+
   roleId: {
     type: Schema.Types.ObjectId, ref: 'role'
   }
 }, {timestamps: true});
+
+const accountSchema = new Schema;
 
 // Bcrypt password
 accountSchema.pre('save', function (next) {
@@ -58,7 +80,7 @@ accountSchema.methods.comparePassword = function(password) {
 }
 
 // Compile the model from the schema
-const account = mongoose.model('account', accountSchema);
+const user = mongoose.model('user', userSchema);
 
 // Export
-module.exports = account;
+module.exports = user;

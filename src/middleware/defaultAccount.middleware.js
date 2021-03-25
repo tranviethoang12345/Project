@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 // Connect Database
 const accountModel = require('../models/account.model');
 
