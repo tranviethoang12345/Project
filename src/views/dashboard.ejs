@@ -1,11 +1,45 @@
 <%- include('includes/header') %>
 
-  <dev class="text-center center-div mt-5">
-    <div class="container w-25 border py-5 mt-5">
-      <h3>Welcome to Express Dashboard</h3>
-      <h5><%= locals.user ? user: "User" %></h5>
-      <a href="/logout">Logout</a>
+<div class="text-center mt-5">
+  <div class="container w-25 border py-5 mb-5">
+    <h3>Welcome to Real Time Dashboard</h3>
+    <h5><%= locals.user ? user: "User" %></h5>
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+<br>
+</div>
+<div class="text-center">
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="border py-5 col-3">
+        <div class="link-dashboard">
+          <a href="">Chat Zoom FM</a>
+        </div>
+      </div>
+      <div class=" py-5 col-1">
+      </div>
+      <div class="border py-5 col-3">
+        <div class="link-dashboard">
+          <a href="">Profile</a>
+        </div>
+      </div>
     </div>
-  </dev>
+  </div>
+  <div class="container mt-5">
+    <div class="row justify-content-around">
+      <div class="border py-5 col-3">
+        <div class="link-dashboard">
+          <a href="">Register</a>
+        </div>
+      </div>
+      <div class="border py-5 col-3">
+        <div class="link-dashboard">
+          <a href="">CRUD System</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%- include('includes/footer') %>

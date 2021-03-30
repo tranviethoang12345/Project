@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: white;
-  background-image: url('/assets/img/background.png');
+  background-image: url("/img/background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .center-div {
-  padding-top: 10%;
+  padding-top: 12%;
 }
 
 .btn.btn-success {
@@ -22,4 +22,11 @@ form {
 
 #login .title > span {
   font-size: 0.8em;
+}
+
+.link-dashboard a {
+  color: white;
+  text-decoration: none;
+  text-shadow: black;
+  font-size: 1.2em;
 }
