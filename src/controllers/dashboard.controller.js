@@ -16,8 +16,5 @@ exports.logout = async (req, res) => {
     res.send("Error");
   }
 
-  await res.render("base", {
-    pageTitle: "Express",
-    // logout: "Logout Successfully!!",
-  });
+  res.redirect('/');
 };
