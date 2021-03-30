@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-catch */
 // Connect Database
-const accountModel = require('../models/account.model');
+const accountModel = require('../models/user.model');
 
 exports.adminAccount = async (req, res, next) => {
   try {
@@ -19,4 +19,4 @@ exports.adminAccount = async (req, res, next) => {
   } catch (error) {
     throw error;
   }
-}
+};

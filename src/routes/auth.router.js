@@ -1,20 +1,34 @@
-const accountModel = require('../models/account.model');
+const accountModel = require('../models/user.model');
 
 // Create Router
 const router = require('express').Router();
 
 // Import Controller
 
+// Login User
+router.get('/', (req, res) => {
+  res.render('base', {
+    path:'/base',
+    title: 'Login System'
+  });
+});
 
-router.post('/', async (req) => {
+router.post('/login', async (req, res) => {
   try {
-    var username = req.body.username;
-    var password = req.body.password;
+    const email = req.body.email;
+    const password = req.body.password;
 
-    var user = await accountModel.findOne({ username: username});
+    const user = await accountModel.findOne({ email: email});
+    if (!user) {
+      res.end("Invalid email")
+    }
 
-    var checkPassword = await user.comparePassword(password)
-    console.log(checkPassword);
+    const checkPassword = await user.comparePassword(password)
+    if (!checkPassword) {
+      res.end("Invalid password")
+    }
+    
+    res.redirect('/dashboard');
   } catch (error) {
     console.log(error);
   }

@@ -38,7 +38,7 @@ const userSchema = new Schema ({
   },
 
   dob: {
-    type: new Date("<YYYY-mm-dd>"),
+    type: Date,
   },
 
   gender: {
@@ -52,10 +52,8 @@ const userSchema = new Schema ({
   }
 }, {timestamps: true});
 
-const accountSchema = new Schema;
-
 // Bcrypt password
-accountSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
   var userPassword = this;
 
   // only hash the password if it has been modified (or is new)
@@ -75,7 +73,7 @@ accountSchema.pre('save', function (next) {
 })
 
 // Compare Password (function)
-accountSchema.methods.comparePassword = function(password) {
+userSchema.methods.comparePassword = function(password) {
   return bcrypt.compare(password, this.password)
 }
 
