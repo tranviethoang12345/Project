@@ -1,7 +1,8 @@
+<%- include('includes/base') %>
 <%- include('includes/header') %>
 
 <div class="text-center mt-5">
-  <div class="container w-25 border py-5 mb-5">
+  <div class="container title w-25 border py-5 mb-5">
     <h3>Welcome to Real Time Dashboard</h3>
     <h5><%= locals.user ? user: "User" %></h5>
     <a href="/logout">Logout</a>
@@ -35,7 +36,7 @@
       </div>
       <div class="border py-5 col-3">
         <div class="link-dashboard">
-          <a href="">CRUD System</a>
+          <a href="/crud">CRUD System</a>
         </div>
       </div>
     </div>

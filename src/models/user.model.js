@@ -1,6 +1,6 @@
 // Import NPM
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
 
@@ -38,8 +38,8 @@ const userSchema = new Schema(
       trim: true,
     },
 
-    dob: {
-      type: Date,
+    status: {
+      type: String,
     },
 
     gender: {
@@ -50,18 +50,18 @@ const userSchema = new Schema(
 
     roleId: {
       type: Schema.Types.ObjectId,
-      ref: "role",
+      ref: 'role',
     },
   },
   { timestamps: true }
 );
 
 // Bcrypt password
-userSchema.pre("save", function (next) {
+userSchema.pre('save', function (next) {
   var userPassword = this;
 
   // only hash the password if it has been modified (or is new)
-  if (!userPassword.isModified("password")) return next();
+  if (!userPassword.isModified('password')) return next();
 
   // generate a salt
   bcrypt.genSalt(10, (err, salt) => {
@@ -82,7 +82,7 @@ userSchema.methods.comparePassword = function (password) {
 };
 
 // Compile the model from the schema
-const user = mongoose.model("user", userSchema);
+const user = mongoose.model('user', userSchema);
 
 // Export
 module.exports = user;

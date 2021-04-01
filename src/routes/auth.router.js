@@ -10,4 +10,10 @@ router.get("/", authController.base);
 // Login User
 router.post("/login", authController.login);
 
+// Dashboard
+router.get("/dashboard", authController.dashboard);
+
+// Logout
+router.get("/logout", authController.logout);
+
 module.exports = router;
