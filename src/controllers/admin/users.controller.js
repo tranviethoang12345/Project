@@ -1,4 +1,4 @@
-var userDB = require('../../models/user.model');
+const usersDB = require('../../models/users.model');
 
 // create and save new user
 exports.create = (req, res) => {
@@ -11,7 +11,7 @@ exports.create = (req, res) => {
   }
 
   // new user
-  const user = new userDB({
+  const user = new usersDB({
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
@@ -42,7 +42,7 @@ exports.find = (req, res) => {
   if (req.query.id) {
     const id = req.query.id;
 
-    userDB.findById(id).then((data) => {
+    usersDB.findById(id).then((data) => {
       if (!data) {
         res.status(404).send({ message: 'Not found user with id ' + id });
       } else {
@@ -50,7 +50,7 @@ exports.find = (req, res) => {
       }
     });
   }
-  userDB
+  usersDB
     .find()
     .then((user) => {
       res.send(user);
@@ -74,7 +74,7 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
   res.status(200).send(body);
-  userDB
+  usersDB
     .findByIdAndUpdate({ _id: id }, body, {
       useFindAndModify: false,
       new: true,
@@ -100,7 +100,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  userDB
+  usersDB
     .findByIdAndDelete(id)
     .then((data) => {
       if (!data) {

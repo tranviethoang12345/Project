@@ -1,5 +1,5 @@
 // Import Service
-const userModel = require("../models/user.model");
+const userModel = require("../models/users.model");
 
 exports.base = (req, res) => {
   res.render("base", {

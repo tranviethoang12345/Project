@@ -3,10 +3,10 @@ const router = require('express').Router();
 
 // Import Router
 const auth = require('../routes/auth.router');
-const crud = require('../routes/admin/crud.router');
+const users = require('../routes/admin/user.router');
 
 router.use('/', auth);
 
-router.use('/admin', crud);
+router.use('/admin', users);
 
 module.exports = router;
