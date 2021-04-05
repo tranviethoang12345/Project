@@ -11,7 +11,6 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       trim: true,
-      lowercase: true,
       required: true,
     },
 
@@ -24,6 +23,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       trim: true,
+      unique: true,
       lowercase: true,
       required: true,
     },
@@ -43,9 +43,7 @@ const userSchema = new Schema(
     },
 
     gender: {
-      type: Number,
-      min: 1,
-      max: 3,
+      type: String,
     },
 
     roleId: {

@@ -1,9 +1,12 @@
-<%- include('./_header') %>
+<!-- include header -->
+<%- include('./includes/header') %>
+<!-- /include header -->
+
 <!-- Main Site -->
 <main id="site-main">
   <div class="container">
     <div class="box-nav d-flex-justify-between">
-      <a href="./add_user.html" class="border-shadow">
+      <a href="admin/add_user" class="border-shadow">
         <span class="text-gradient"> New User<i class="fas fa-user"></i> </span>
       </a>
     </div>
@@ -14,17 +17,17 @@
         <thead class="thead-dark">
           <tr>
             <th>ID</th>
-            <th>username</th>
-            <th>email</th>
-            <th>fullName</th>
-            <th>status</th>
-            <th>gender</th>
-            <th>roleName</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Gender</th>
+            <th>Role</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <%- include('./show') %>
+          <%- include('./includes/show') %>
         </tbody>
       </table>
     </form>
@@ -32,4 +35,7 @@
   </div>
 </main>
 <!-- /Main Site -->
-<%- include('../includes/footer') %>
+
+<!-- include footer -->
+<%- include('./includes/footer') %>
+<!-- /include footer -->

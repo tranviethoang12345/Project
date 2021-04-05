@@ -4,16 +4,28 @@ const router = require("express").Router();
 // Import Controller
 const authController = require("./../controllers/auth.controller");
 
-// Base
+/**
+ * @description Base
+ * @method GET /
+ */
 router.get("/", authController.base);
 
-// Login User
+/**
+ * @description Login User
+ * @method GET /login
+ */
 router.post("/login", authController.login);
 
-// Dashboard
+/**
+ * @description Dashboard
+ * @method GET /dashboard
+ */
 router.get("/dashboard", authController.dashboard);
 
-// Logout
+/**
+ * @description Logout
+ * @method GET /logout
+ */
 router.get("/logout", authController.logout);
 
 module.exports = router;

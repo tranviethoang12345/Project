@@ -1,14 +1,12 @@
 // Create Router
-const router = require("express").Router();
+const router = require('express').Router();
 
 // Import Router
-const auth = require("../routes/auth.router");
-const user = require("../routes/user.router");
-const crud = require("../routes/crud/crud.router");
+const auth = require('../routes/auth.router');
+const crud = require('../routes/admin/crud.router');
 
-router.use("/", auth);
+router.use('/', auth);
 
-router.use("/user", user);
-router.use("/crud", crud);
+router.use('/admin', crud);
 
 module.exports = router;
