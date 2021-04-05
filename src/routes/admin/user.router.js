@@ -21,7 +21,7 @@ router.get('/add_user', renderServices.add_user);
  */
 router.get('/update_user', renderServices.update_user);
 
-//API
+// API CRUD
 router.post('/api/users', usersController.create);
 router.get('/api/users', usersController.find);
 router.put('/api/users/:id', usersController.update);

@@ -24,3 +24,21 @@ $('#update_user').submit(function (event) {
     alert('Data Update Successfully!');
   });
 });
+
+if (window.location.pathname == '/admin') {
+  $ondelete = $('.table tbody td a.delete');
+  $ondelete.click(function () {
+    var id = $(this).attr('data-id');
+    var request = {
+      url: `http://localhost:3000/admin/api/users/${id}`,
+      method: 'DELETE',
+    };
+
+    if (confirm('Do you really want to delete this record')) {
+      $.ajax(request).done(function (response) {
+        alert('Data Delete Successfully!');
+        location.reload();
+      });
+    }
+  });
+}
