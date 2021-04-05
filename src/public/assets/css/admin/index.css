@@ -164,7 +164,9 @@ table {
 }
 
 #update_user .form-group input[type='text'],
-#add_user .form-group input[type='text'] {
+#add_user .form-group input[type='text'],
+#update_user .form-group input[type='password'],
+#add_user .form-group input[type='password'] {
   width: 100%;
   padding: 0.6em 1em;
   margin: 0.5em 0;
@@ -179,7 +181,8 @@ table {
   margin: 1em 2em;
 }
 
-#update_user .form-group .checkbox {
+#update_user .form-group .checkbox,
+#add_user .form-group .checkbox {
   margin: 1em 4em;
 }
 

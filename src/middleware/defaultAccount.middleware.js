@@ -25,7 +25,7 @@ exports.adminAccount = async (req, res, next) => {
       gender,
       roleId,
     });
-    
+
     return next();
   } catch (error) {
     throw error;

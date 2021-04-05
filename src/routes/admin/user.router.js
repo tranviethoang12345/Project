@@ -1,25 +1,25 @@
 const router = require('express').Router();
 
-const usersServices = require('../../services/admin/users.service');
+const renderServices = require('../../services/admin/render.service');
 const usersController = require('../../controllers/admin/users.controller');
 
 /**
  * @description admin crud
  * @method GET /
  */
-router.get('/', usersServices.homeCrud);
+router.get('/', renderServices.homeCrud);
 
 /**
  * @description add_user
  * @method GET /add_user
  */
-router.get('/add_user', usersServices.add_user);
+router.get('/add_user', renderServices.add_user);
 
 /**
  * @description update_user
  * @method GET /update_user
  */
-router.get('/update_user', usersServices.update_user);
+router.get('/update_user', renderServices.update_user);
 
 //API
 router.post('/api/users', usersController.create);
