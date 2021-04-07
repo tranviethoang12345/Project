@@ -1,4 +1,4 @@
-// Import Database
+// Import Service
 const userService = require('../../services/admin/user.service');
 const usersDB = require('../../models/users.model');
 
