@@ -1,9 +1,9 @@
 // Import Service
-const userModel = require("../models/users.model");
+const userModel = require("../../models/users.model");
 
 exports.base = (req, res) => {
-  res.render("base", {
-    path: "/base",
+  res.render("auth/base", {
+    path: "/auth/base",
     pageTitle: "Login System",
   });
 };
@@ -37,7 +37,7 @@ exports.dashboard = async (req, res) => {
   if (!user) {
     res.send("Unauthorize User");
   }
-  await res.render("dashboard", {
+  await res.render("home/dashboard", {
     pageTitle: "dashboard",
     user: user,
   });
@@ -50,5 +50,5 @@ exports.logout = async (req, res) => {
     res.send("Error");
   }
 
-  res.redirect('/');
+  res.redirect("/");
 };

@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 $('#add_user').submit((event) => {
   alert('Data Inserted Successfully!');
+  window.location = "/admin"
 });
 
 $('#update_user').submit(function (event) {
@@ -22,6 +23,7 @@ $('#update_user').submit(function (event) {
 
   $.ajax(request).done(function (response) {
     alert('Data Update Successfully!');
+    window.location = "/admin"
   });
 });
 

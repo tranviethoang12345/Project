@@ -1,4 +1,5 @@
 // Import Database
+const userService = require('../../services/admin/user.service');
 const usersDB = require('../../models/users.model');
 
 // create and save new user
@@ -26,7 +27,7 @@ exports.create = (req, res) => {
   user
     .save(user)
     .then((data) => {
-      res.status(200).json(data).redirect('/admin/add_user');
+      res.status(200).redirect('/admin');
     })
     .catch((err) => {
       res.status(500).send({

@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 // Import Controller
-const authController = require('./../controllers/auth.controller');
+const authController = require('../../controllers/auth/auth.controller');
 
 /**
  * @description Base
