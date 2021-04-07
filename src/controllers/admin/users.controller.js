@@ -1,8 +1,9 @@
+// Import Database
 const usersDB = require('../../models/users.model');
 
 // create and save new user
 exports.create = (req, res) => {
-  //validate request
+  // validate request
   if (!req.body) {
     res.status(400).send({
       message: 'Content can not be empty!',
@@ -24,9 +25,8 @@ exports.create = (req, res) => {
   // save user in the database
   user
     .save(user)
-    // eslint-disable-next-line no-unused-vars
     .then((data) => {
-      res.redirect('/admin/add_user');
+      res.status(200).json(data).redirect('/admin/add_user');
     })
     .catch((err) => {
       res.status(500).send({

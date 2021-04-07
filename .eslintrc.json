@@ -5,10 +5,15 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": 12
+    // "sourceType": "module"
   },
+  "plugins": ["react"],
   "rules": {
     "callback-return": [
       "error",
@@ -16,6 +21,7 @@
     ],
     "no-useless-catch": "off",
     "linebreak-style": 0,
-    "no-console": ["off"]
+    "no-console": ["off"],
+    "semi": "off"
   }
 }
