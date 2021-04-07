@@ -37,7 +37,7 @@ exports.dashboard = async (req, res) => {
   if (!user) {
     res.send("Unauthorize User");
   }
-  await res.render("home/dashboard", {
+  await res.render("dashboard/dashboard", {
     pageTitle: "dashboard",
     user: user,
   });

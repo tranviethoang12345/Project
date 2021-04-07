@@ -35,6 +35,7 @@ app.use("/css", express.static(path.join(__dirname, "public/assets/css")));
 app.use("/img", express.static(path.join(__dirname, "public/assets/img")));
 app.use("/font", express.static(path.join(__dirname, "public/assets/font")));
 app.use("/js", express.static(path.join(__dirname, "public/assets/js")));
+app.use("/vendor", express.static(path.join(__dirname, "public/assets/vendor")));
 
 // Create session
 app.use(

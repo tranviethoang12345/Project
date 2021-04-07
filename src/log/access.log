@@ -1,0 +1,5 @@
+GET / 304 - - 16.850 ms
+POST /login 302 64 - 60.751 ms
+GET /dashboard 304 - - 4.018 ms
+GET /admin/api/users 200 1879 - 5.204 ms
+GET /admin 304 - - 16.277 ms
