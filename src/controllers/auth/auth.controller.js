@@ -26,19 +26,19 @@ exports.login = async (req, res) => {
     }
 
     req.session.user = email;
-    res.redirect("/dashboard");
+    res.redirect("/home");
   } catch (error) {
     console.log(error);
   }
 };
 
-exports.dashboard = async (req, res) => {
+exports.home = async (req, res) => {
   const user = req.session.user;
   if (!user) {
     res.send("Unauthorize User");
   }
-  await res.render("dashboard/dashboard", {
-    pageTitle: "dashboard",
+  await res.render("home/home", {
+    pageTitle: "home",
     user: user,
   });
 };

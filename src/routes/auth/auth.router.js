@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 // Import Controller
-const authController = require('../../controllers/auth/auth.controller');
+const authController = require('../../controllers/Auth/auth.controller');
 
 /**
  * @description Base
@@ -17,10 +17,10 @@ router.get('/', authController.base);
 router.post('/login', authController.login);
 
 /**
- * @description Dashboard
- * @method GET /dashboard
+ * @description Home
+ * @method GET /home
  */
-router.get('/dashboard', authController.dashboard);
+router.get('/home', authController.home);
 
 /**
  * @description Logout
