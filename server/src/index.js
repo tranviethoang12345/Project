@@ -22,7 +22,7 @@ require("./config/database");
 
 // Setting for accepting post form data (body-parser)
 // parse requests of content-type - application/json
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.json({ limit: "30mb", extended: true })); // Limit the Img which are heavy
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
