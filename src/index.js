@@ -75,4 +75,9 @@ const postRoutes = require("./config/routes");
 // Routes
 app.use("/", postRoutes);
 
+// Import Controller
+const errorPage = require('./controllers/error/error.controller')
+// Error Page
+app.use(errorPage.get404);
+
 module.exports = app;

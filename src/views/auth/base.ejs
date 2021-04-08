@@ -1,135 +1,19 @@
+<!-- include header -->
 <%- include('includes/header') %>
 
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="login" method="POST" class="sign-in-form">
-        <h2 class="title">Sign in</h2>
+      <!-- include sign in -->
+      <%- include('sign_in') %>
 
-        <!-- Email -->
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input type="email" placeholder="Email" name="email" />
-        </div>
-
-        <!-- Password -->
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" name="password" />
-        </div>
-
-        <!-- submit Login -->
-        <input type="submit" value="Login" class="btn solid" />
-
-        <!-- social -->
-        <p class="social-text">Or Sign in with social platforms</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-        <!-- /social -->
-      </form>
-
-      <form
-        action="/admin/api/users"
-        method="POST"
-        class="sign-up-form"
-        id="registration"
-      >
-        <h2 class="registration">Sign up</h2>
-
-        <!-- Username -->
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input
-            type="text"
-            name="username"
-            value=""
-            id=""
-            placeholder="Username"
-          />
-          <input type="hidden" name="id" value="" id="" />
-        </div>
-
-        <!-- Email -->
-        <div class="input-field">
-          <i class="fas fa-envelope"></i>
-          <input type="email" name="email" value="" id="" placeholder="Email" />
-        </div>
-
-        <!-- Password -->
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input
-            type="password"
-            name="password"
-            value=""
-            id=""
-            placeholder="Password"
-          />
-        </div>
-
-        <!-- submit Sign Up -->
-        <input type="submit" class="btn" value="Sign up" />
-
-        <p class="social-text">Or Sign up with social platforms</p>
-        <div class="social-media">
-          <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="#" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </form>
+      <!-- include sign up -->
+      <%- include('sign_up') %>
     </div>
   </div>
-
-  <div class="panels-container">
-    <div class="panel left-panel">
-      <div class="content">
-        <h3>New here ?</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex
-          ratione. Aliquid!
-        </p>
-        <button class="btn transparent" id="sign-up-btn">Sign up</button>
-      </div>
-
-      <!-- Image -->
-      <img src="img/auth/log.svg" class="image" alt="" />
-    </div>
-
-    <div class="panel right-panel">
-      <div class="content">
-        <h3>One of us ?</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          laboriosam ad deleniti.
-        </p>
-        <button class="btn transparent" id="sign-in-btn">Sign in</button>
-      </div>
-
-      <!-- Image -->
-      <img src="img/auth/register.svg" class="image" alt="" />
-    </div>
-  </div>
+  <!-- include panel -->
+  <%- include('includes/panel') %>
 </div>
 
+<!-- include footer -->
 <%- include('includes/footer') %>
