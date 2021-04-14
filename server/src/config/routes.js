@@ -9,8 +9,6 @@ const users = require('../routes/admin/user.router');
 
 router.use('/', auth);
 
-router.use('/room', room);
-router.use('/workspace', post);
 router.use('/admin', users);
 
 module.exports = router;

@@ -13,3 +13,4 @@ sign_in_btn.addEventListener('click', () => {
 $('#registration').submit(() => {
   window.location = '/';
 });
+  
