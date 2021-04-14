@@ -7,11 +7,9 @@ const { Schema } = mongoose;
 // User Detail
 const userSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
-      unique: true,
       trim: true,
-      required: true,
     },
 
     password: {
@@ -28,16 +26,6 @@ const userSchema = new Schema(
       required: true,
     },
 
-    fullName: {
-      type: String,
-      trim: true,
-    },
-
-    image: {
-      type: String,
-      trim: true,
-    },
-
     status: {
       type: String,
     },
@@ -48,7 +36,7 @@ const userSchema = new Schema(
 
     roleId: {
       type: Schema.Types.ObjectId,
-      ref: 'role',
+      ref: 'normal',
     },
   },
   { timestamps: true }

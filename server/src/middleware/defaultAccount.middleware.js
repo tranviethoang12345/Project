@@ -4,10 +4,9 @@ const accountModel = require('../models/users.model');
 
 exports.adminAccount = async (req, res, next) => {
   try {
-    let username = 'admin';
+    let name = 'admin';
     let password = '12345678';
     let email = 'admin@gmail.com';
-    let fullName = 'admin';
     let status = 'Active';
     let gender = 'Other';
     let roleId = '604b2d3f36b2fd0610004e0c';
@@ -17,10 +16,9 @@ exports.adminAccount = async (req, res, next) => {
       return next();
     }
     await accountModel.create({
-      username,
+      name,
       email,
       password,
-      fullName,
       status,
       gender,
       roleId,
