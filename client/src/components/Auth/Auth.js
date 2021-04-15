@@ -4,6 +4,7 @@ import "./includes/index";
 import SignIn from "./signIn";
 import SignUp from "./signUp";
 import Panel from "./includes/panel";
+import "./includes/index.css"
 
 export const Auth = () => {
   return (
