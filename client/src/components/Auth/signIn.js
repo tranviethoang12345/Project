@@ -1,13 +1,12 @@
 import React from "react";
 
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-
-const login = () => {
-
+const login = (props) => {
+  const handleLogin = () => {
+    props.history.push("/home")
+  }
   return (
     <React.Fragment>
-      <form action="login" class="sign-in-form">
+      <form action="login" class="sign-in-form" onSubmit={handleLogin}>
         <h2 class="title">Sign in</h2>
 
         {/* Email */}

@@ -1,10 +1,12 @@
-import React from "react";
-import img from "../../../assets/img/auth/log.svg"
+import React from 'react';
+import logImg from '../../../assets/img/auth/log.svg';
+import registerImg from '../../../assets/img/auth/register.svg';
 
-const panel = () => {
+
+const Panel = (props) => {
   return (
     <React.Fragment>
-      <div class="panels-container">
+      <div class={`panels-container`}>
         {/* Go Sign Up */}
         <div class="panel left-panel">
           <div class="content">
@@ -15,13 +17,17 @@ const panel = () => {
               <br />
               Once you're logged in, you can update detail your profile.
             </p>
-            <button class="btn transparent" id="sign-up-btn">
+            <button
+              class="btn transparent"
+              id="sign-up-btn"
+              onClick={props.handleSignUp}
+            >
               Sign up
             </button>
           </div>
 
           {/* Image */}
-          <img src={img} class="image" alt="" />
+          <img src={logImg} class="image" alt="" />
         </div>
 
         {/* Go Sign In */}
@@ -32,17 +38,21 @@ const panel = () => {
               Once you're already a CZ-M user? Please click below to Login to
               your profile.
             </p>
-            <button class="btn transparent" id="sign-in-btn">
+            <button
+              onClick={props.handleSignIn}
+              class="btn transparent"
+              id="sign-in-btn"
+            >
               Sign in
             </button>
           </div>
 
           {/* Image */}
-          <img src="img/auth/register.svg" class="image" alt="" />
+          <img src={registerImg} class="image" alt="" />
         </div>
       </div>
     </React.Fragment>
   );
 };
 
-export default panel;
+export default Panel;
