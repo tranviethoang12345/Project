@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Auth from "./components/Auth/Auth";
 import Home from "./components/Home/Home";
-import Workspace from "./components/Workspace/Home";
+import Workspace from "./components/Workspace/Workspace";
 
 const App = () => {
   return (

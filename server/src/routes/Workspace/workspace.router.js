@@ -2,18 +2,17 @@
 const router = require('express').Router();
 
 // Import Controller
-const workspaceController = require('../../controllers/Auth/auth.controller');
+const workspaceController = require('../../controllers/Workspace/post.controller');
 
 /**
  * @description SignIn User
  * @method GET /SignIn
  */
-router.post('/signIn', authController.signIn);
 
-/**
- * @description Home
- * @method GET /home
- */
-router.get('/signUp', authController.signUp);
+router.get("/", workspaceController.getPosts);
+router.post("/", workspaceController.createPost);
+router.patch("/:id", workspaceController.updatePost);
+router.delete("/:id", workspaceController.deletePost);
+router.patch("/:id/likePost", workspaceController.likePost);
 
 module.exports = router;

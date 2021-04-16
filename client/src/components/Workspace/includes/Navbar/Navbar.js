@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import useStyles from "./styles";
-import imgPost from "./../../images/post.png";
+import imgPost from "../../../../assets/img/Workspace/post.png";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -82,7 +82,7 @@ const Navbar = () => {
         ) : (
           <Button
             component={Link}
-            to="/auth"
+            to="/"
             variant="contained"
             color="primary"
           >

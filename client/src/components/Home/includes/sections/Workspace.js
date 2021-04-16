@@ -1,5 +1,8 @@
-import React from 'react'
-import img from '../../../../assets/img/Home/02.jpeg'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Typography } from "@material-ui/core";
+
+import img from "../../../../assets/img/Home/02.jpeg";
 
 const Workspace = () => {
   return (
@@ -10,11 +13,7 @@ const Workspace = () => {
             <div class="col-lg-6 order-lg-1">
               <div class="p-5">
                 {/* Image */}
-                <img
-                  class="img-fluid rounded-circle"
-                  src={img}
-                  alt={img}
-                />
+                <img class="img-fluid rounded-circle" src={img} alt={img} />
               </div>
             </div>
 
@@ -32,21 +31,20 @@ const Workspace = () => {
                 </p>
 
                 {/* Button Join */}
-                <div>
-                  <a
-                    href="/workspace"
-                    class="btn btn-secondary font-weight-bold"
-                  >
-                    Join Workspace
-                  </a>
-                </div>
+                <Typography
+                  class="btn btn-secondary font-weight-bold"
+                  component={Link}
+                  to="/workspace"
+                >
+                  Join Workspace
+                </Typography>
               </div>
             </div>
           </div>
         </div>
       </section>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Workspace
+export default Workspace;

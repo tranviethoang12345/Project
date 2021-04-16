@@ -1,39 +1,32 @@
 // Import NPM
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
 // Post Detail
 const postSchema = new Schema(
   {
-    title: {
-      type: String,
+    title: String,
+    message: String,
+    name: String,
+    creator: String,
+    tags: [String], // []ARRAY
+    selectedImage: String,
+    selectedFile: String,
+    likes: {
+      type: [String],
+      default: [],
     },
-
-    message: {
-      type: String,
-    },
-
-    creator: {
-      type: String,
-    },
-
-    tag: [String],
-
-    selectedFile: {
-      type: String,
-    },
-
-    likeCount: {
-      type: Number,
-      default: 0,
+    createAt: {
+      type: Date,
+      default: new Date(),
     },
   },
   { timestamps: true }
 );
 
 // Compile the model from the schema
-const post = mongoose.model('post', postSchema);
+const post = mongoose.model("post", postSchema);
 
 // Export
 module.exports = post;
