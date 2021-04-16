@@ -6,14 +6,14 @@ const authController = require('../../controllers/Auth/auth.controller');
 
 /**
  * @description SignIn User
- * @method GET /SignIn
+ * @method POST /SignIn
  */
 router.post('/signIn', authController.signIn);
 
 /**
  * @description Home
- * @method GET /home
+ * @method POST /home
  */
-router.get('/signUp', authController.signUp);
+router.post('/signUp', authController.signUp);
 
 module.exports = router;

@@ -47,14 +47,18 @@ const SignUp = () => {
 
         <p class="social-text">Or Sign up with social platforms</p>
         <div class="social-media">
-          {/* class="social-icon" */}
-          <i class="fab fa-facebook-f"></i>
-          {/* class="social-icon" */}
-          <i class="fab fa-twitter"></i>
-          {/* class="social-icon" */}
-          <i class="fab fa-google"></i>
-          {/* class="social-icon" */}
-          <i class="fab fa-linkedin-in"></i>
+          <button class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="social-icon">
+            <i class="fab fa-google"></i>
+          </button>
+          <button class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </button>
         </div>
       </form>
     </React.Fragment>
