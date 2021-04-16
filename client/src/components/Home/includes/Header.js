@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Typography } from "@material-ui/core";
 
 const Header = () => {
   return (
@@ -6,11 +8,28 @@ const Header = () => {
       <header class="masthead text-center text-white">
         <div class="masthead-content">
           <div class="container">
-            <h1 class="masthead-heading mb-0">Welcome CZ-M</h1>
-            <h2 class="masthead-subheading mb-0">Be Smart and Work Hard</h2>
-            <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">
+            <Typography
+              class="masthead-heading mb-0"
+              variant="h1"
+              component="h2"
+              gutterBottom
+            >
+              Welcome CZ-M
+            </Typography>
+            <Typography
+              class="masthead-subheading mb-0"
+              variant="h2"
+              gutterBottom
+            >
+              Be Smart and Work Hard
+            </Typography>
+            <Typography
+              class="btn btn-primary btn-xl rounded-pill mt-5"
+              component={Link}
+              to="/home"
+            >
               Let's Start
-            </a>
+            </Typography>
           </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>

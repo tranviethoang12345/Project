@@ -2,27 +2,20 @@
 const userModel = require("../../models/users.model");
 
 exports.signIn = async (req, res) => {
+  const { email, password } = req.body;
   try {
-    const email = req.body.email;
-    const password = req.body.password;
-
-    const user = await userModel.findOne({
-      email: email,
-    });
-    if (!user) {
-      res.end("Invalid email");
-    }
+    const existingUser = await userModel.findOne({ email: email });
+    if (!existingUser)
+      return res.status(404).json({ message: "User does not exist." });
 
     const checkPassword = await user.comparePassword(password);
     if (!checkPassword) {
-      res.end("Invalid password");
+      return res.status(404).json({ message: "Invalid credentials." });
     }
 
-    req.session.user = email;
-    res.redirect("/home");
   } catch (error) {
-    console.log(error);
+    res.status(500).json({ message: "Something went wrong." });
   }
 };
 
-exports.signUp = async (req, res) => {}
+exports.signUp = async (req, res) => {};

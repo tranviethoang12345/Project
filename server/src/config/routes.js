@@ -5,7 +5,7 @@ const router = require('express').Router();
 const auth = require('../routes/auth/auth.router');
 const users = require('../routes/admin/user.router');
 
-router.use('/', auth);
+router.use('/user', auth);
 
 router.use('/admin', users);
 

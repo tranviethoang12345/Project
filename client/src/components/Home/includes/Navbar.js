@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Typography } from "@material-ui/core";
 
-const Navigation = () => {
+const Navbar = () => {
   return (
     <React.Fragment>
       {/* Navigation */}
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
           {/* Left */}
-          <a class="navbar-brand" href="#">
-            a
-          </a>
+          <Typography class="navbar-brand" component={Link} to="/home">
+            name
+          </Typography>
           <button
             class="navbar-toggler"
             type="button"
@@ -31,14 +33,14 @@ const Navigation = () => {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Typography class="nav-link" component={Link} to="/home">
                   Profile
-                </a>
+                </Typography>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/logout">
+                <Typography class="nav-link" component={Link} to="/">
                   Logout
-                </a>
+                </Typography>
               </li>
             </ul>
           </div>
@@ -48,4 +50,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navbar;
