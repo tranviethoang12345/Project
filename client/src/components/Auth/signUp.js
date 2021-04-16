@@ -1,6 +1,6 @@
 import React from "react";
 
-const signup = () => {
+const SignUp = () => {
   return (
     <React.Fragment>
       <form
@@ -9,7 +9,7 @@ const signup = () => {
         class="sign-up-form"
         id="registration"
       >
-        <h2 class="registration">Sign up</h2>
+        <h2 class="registration">Register</h2>
 
         {/* Username */}
         <div class="input-field">
@@ -61,4 +61,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default SignUp;

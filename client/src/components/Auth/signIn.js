@@ -1,12 +1,12 @@
 import React from "react";
 
-const login = (props) => {
-  const handleLogin = () => {
+const SignIn = (props) => {
+  const handleSignIn = () => {
     props.history.push("/home")
   }
   return (
     <React.Fragment>
-      <form action="login" class="sign-in-form" onSubmit={handleLogin}>
+      <form action="login" class="sign-in-form" onSubmit={handleSignIn}>
         <h2 class="title">Sign in</h2>
 
         {/* Email */}
@@ -41,4 +41,4 @@ const login = (props) => {
   );
 };
 
-export default login;
+export default SignIn;

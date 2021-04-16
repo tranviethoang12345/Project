@@ -5,27 +5,15 @@ const router = require('express').Router();
 const authController = require('../../controllers/Auth/auth.controller');
 
 /**
- * @description Base
- * @method GET /
+ * @description SignIn User
+ * @method GET /SignIn
  */
-router.get('/', authController.base);
-
-/**
- * @description Login User
- * @method GET /login
- */
-router.post('/login', authController.login);
+router.post('/signIn', authController.signIn);
 
 /**
  * @description Home
  * @method GET /home
  */
-router.get('/home', authController.home);
-
-/**
- * @description Logout
- * @method GET /logout
- */
-router.get('/logout', authController.logout);
+router.get('/signUp', authController.signUp);
 
 module.exports = router;

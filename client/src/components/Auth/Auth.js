@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 
-import SignIn from './signIn';
-import SignUp from './signUp';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 import Panel from './includes/Panel';
 
 export const Auth = () => {
-  const [isSignup, setIsSignup] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
   const handleSignUp = (e) => {
-    setIsSignup(true);
+    setIsSignUp(true);
   };
   const handleSignIn = (e) => {
-    setIsSignup(false);
+    setIsSignUp(false);
   };
 
   return (
     <React.Fragment>
-      <div class={`auth-page container  ${isSignup ? 'sign-up-mode' : ''}`}>
+      <div class={`auth-page containerAuth  ${isSignUp ? 'sign-up-mode' : ''}`}>
+        <div></div>
         <div class="forms-container">
           <div class="signin-signup">
             {/* include sign in */}
@@ -25,7 +26,7 @@ export const Auth = () => {
             <SignUp />
           </div>
         </div>
-        {/* include panel */}
+        {/* include Panel */}
         <Panel handleSignUp={handleSignUp} handleSignIn={handleSignIn} />
       </div>
     </React.Fragment>
