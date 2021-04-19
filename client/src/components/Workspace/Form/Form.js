@@ -29,13 +29,13 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (currentId === 0) {
+    console.log(currentId);
+    if (currentId === 0 || currentId === null) {
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
+    } else {
       dispatch(
         updatePost(currentId, { ...postData, name: user?.result?.name })
       );
-    } else {
-      dispatch(createPost({ ...postData, name: user?.result?.name }));
     }
     clear();
   };
@@ -56,7 +56,7 @@ const Form = ({ currentId, setCurrentId }) => {
       title: "",
       message: "",
       tags: "",
-      selectedImage:"",
+      selectedImage: "",
       selectedFile: "",
     });
   };
