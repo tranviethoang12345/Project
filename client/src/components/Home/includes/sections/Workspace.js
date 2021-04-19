@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import img from "../../../../assets/img/Home/02.jpeg";
 
-const Workspace = () => {
+const Workspace = (user) => {
   return (
     <React.Fragment>
       <section>
@@ -31,13 +31,13 @@ const Workspace = () => {
                 </p>
 
                 {/* Button Join */}
-                <Typography
+                <Button
                   class="btn btn-secondary font-weight-bold"
                   component={Link}
                   to="/workspace"
                 >
                   Join Workspace
-                </Typography>
+                </Button>
               </div>
             </div>
           </div>

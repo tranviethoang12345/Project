@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { AppBar, Avatar, Typography, Toolbar, Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
+import { AppBar, Avatar, Typography, Toolbar, Button } from "@material-ui/core";
 import useStyles from "./styles";
 import imgPost from "../../../../assets/img/Workspace/post.png";
 
@@ -21,8 +21,6 @@ const Navbar = () => {
 
     setUser(null);
   };
-
-  console.log(user);
 
   useEffect(() => {
     const token = user?.token;
@@ -43,7 +41,7 @@ const Navbar = () => {
       <div className={classes.brandContainer}>
         <Typography
           component={Link}
-          to="/"
+          to="/home"
           className={classes.heading}
           variant="h2"
           align="center"

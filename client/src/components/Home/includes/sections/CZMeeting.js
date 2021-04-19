@@ -1,7 +1,9 @@
-import React from 'react'
-import img from '../../../../assets/img/Home/01.jpeg'
+import React from "react";
+import img from "../../../../assets/img/Home/01.jpeg";
 
-const CZMeeting = () => {
+import { Button } from '@material-ui/core';
+
+const CZMeeting = (user) => {
   return (
     <React.Fragment>
       <section>
@@ -10,11 +12,7 @@ const CZMeeting = () => {
             <div class="col-lg-6 order-lg-2">
               <div class="p-5">
                 {/* Image */}
-                <img
-                  class="img-fluid rounded-circle"
-                  src={img}
-                  alt={img}
-                />
+                <img class="img-fluid rounded-circle" src={img} alt={img} />
               </div>
             </div>
 
@@ -30,9 +28,12 @@ const CZMeeting = () => {
                 </p>
                 {/* Button Join */}
                 <div>
-                  <a href="/room" class="btn btn-secondary font-weight-bold">
+                  <Button
+                    href="/room"
+                    class="btn btn-secondary font-weight-bold"
+                  >
                     Join CZ-M
-                  </a>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -40,7 +41,7 @@ const CZMeeting = () => {
         </div>
       </section>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default CZMeeting
+export default CZMeeting;

@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./includes/Header";
-import Navbar from "./includes/Navbar";
+import Navbar from "./includes/Navbar/Navbar";
 import CZMeeting from "./includes/sections/CZMeeting"
 import Workspace from "./includes/sections/Workspace"
 import Footer from "./includes/Footer";
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Header />
-      <Navbar />
+      <Navbar/>
 
       {/* Chat Zoom - Meeting */}
       <CZMeeting />

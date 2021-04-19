@@ -1,8 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
+
 import { Typography } from "@material-ui/core";
+import useStyles from "./styles";
+
 
 const Navbar = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
+
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+
+    history.push("/");
+
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const token = user?.token;
+
+    // JWT
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
+
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
+
   return (
     <React.Fragment>
       {/* Navigation */}
@@ -10,7 +42,7 @@ const Navbar = () => {
         <div class="container">
           {/* Left */}
           <Typography class="navbar-brand" component={Link} to="/home">
-            name
+            {user.result.name}
           </Typography>
           <button
             class="navbar-toggler"
@@ -33,12 +65,17 @@ const Navbar = () => {
                 </a>
               </li>
               <li class="nav-item">
-                <Typography class="nav-link" component={Link} to="/home">
+                <Typography
+                  class="nav-link"
+                  component={Link}
+                  color="secondary"
+                  to="/home"
+                >
                   Profile
                 </Typography>
               </li>
               <li class="nav-item">
-                <Typography class="nav-link" component={Link} to="/">
+                <Typography class="nav-link" component={Link} onClick={logout}>
                   Logout
                 </Typography>
               </li>

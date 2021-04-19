@@ -21,8 +21,6 @@ exports.signIn = async (req, res) => {
       "1h"
     );
 
-    console.log(token);
-
     res.status(200).json({ result: existingUser, token: token });
 
   } catch (error) {
