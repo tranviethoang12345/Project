@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-import { Button } from "@material-ui/core";
+import { Button } from '@material-ui/core';
 
-import { signIn } from "../../actions/Auth/auth";
+import { signIn } from '../../actions/Auth/auth';
 
 const initialState = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const SignIn = () => {
@@ -37,6 +37,8 @@ const SignIn = () => {
           <input
             type="email"
             placeholder="Email"
+            required
+            autoFocus
             name="email"
             onChange={handleChange}
           />
@@ -48,6 +50,8 @@ const SignIn = () => {
           <input
             type="password"
             placeholder="Password"
+            required
+            autoFocus
             name="password"
             onChange={handleChange}
           />

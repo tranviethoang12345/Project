@@ -5,7 +5,6 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const fs = require("fs");
 const path = require("path");
 
 const server = require("http").Server(app);

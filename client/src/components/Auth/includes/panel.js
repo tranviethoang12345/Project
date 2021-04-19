@@ -2,7 +2,6 @@ import React from 'react';
 import logImg from '../../../assets/img/auth/log.svg';
 import registerImg from '../../../assets/img/auth/register.svg';
 
-
 const Panel = (props) => {
   return (
     <React.Fragment>
