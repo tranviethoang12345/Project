@@ -103,7 +103,7 @@ const Post = ({ post, setCurrentId }) => {
         <Typography className={classes.title} variant="h5">
           File:
         </Typography>
-        <div 
+        <Button 
           className={classes.buttonFileDownload}
           variant="contained"
           color="primary"
@@ -118,7 +118,7 @@ const Post = ({ post, setCurrentId }) => {
           onClick={download}
         >
           Download
-        </div>
+        </Button>
       </CardActions>
 
       <CardActions className={classes.cardActions}>

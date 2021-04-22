@@ -72,4 +72,9 @@ const postRoutes = require("./config/routes");
 // Routes
 app.use("/", postRoutes);
 
+// Testing
+app.get('/', (req, res) => {
+  res.send('Hello to Backend API!')
+})
+
 module.exports = server;

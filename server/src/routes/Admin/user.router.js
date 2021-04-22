@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const usersController = require('../../controllers/admin/users.controller');
+const usersController = require('../../controllers/Admin/users.controller');
 
 /**
  * @description Admin - User

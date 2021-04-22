@@ -13,13 +13,13 @@
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.2",
+    "mongoose": "^5.12.5",
     "morgan": "^1.10.0",
     "socket.io": "^4.0.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-node": "^11.1.0",
@@ -29,7 +29,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",

@@ -114,6 +114,7 @@ const Form = ({ currentId, setCurrentId }) => {
           <FileBase
             type="file"
             multiple={false}
+            accept="image/*"
             onDone={({ base64 }) =>
               setPostData({ ...postData, selectedImage: base64 })
             }

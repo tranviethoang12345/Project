@@ -2,9 +2,9 @@
 const router = require('express').Router();
 
 // Import Router
-const auth = require('../routes/auth/auth.router');
-const users = require('../routes/admin/user.router');
-const workspace = require('../routes/workspace/workspace.router');
+const auth = require('../routes/Auth/auth.router');
+const users = require('../routes/Admin/user.router');
+const workspace = require('../routes/Workspace/workspace.router');
 
 const authCheck = require('../middleware/auth.middleware')
 
