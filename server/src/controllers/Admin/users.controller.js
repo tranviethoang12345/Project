@@ -1,123 +1,55 @@
-// Import Service
-const userService = require('../../services/admin/user.service');
-const usersDB = require('../../models/users.model');
+const userModel = require('../../models/users.model');
+const mongoose = require("mongoose");
 
-// create and save new user
-exports.create = (req, res) => {
-  // validate request
-  if (!req.body) {
-    res.status(400).send({
-      message: 'Content can not be empty!',
-    });
-    return;
+// get all users
+exports.getUsers = async (req, res) => {
+  try {
+    const postMessage = await postModel.find();
+
+    res.status(200).json(postMessage);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
-
-  // new user
-  const user = new usersDB({
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email,
-    fullName: req.body.fullName,
-    image: req.body.image,
-    status: req.body.status,
-    gender: req.body.gender,
-  });
-
-  // save user in the database
-  user
-    .save(user)
-    .then((data) => {
-      res.status(200).redirect('/admin');
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message ||
-          'Some error occurred while creating a create operation',
-      });
-    });
 };
 
-// retrieve and return all user/ retrieve and return a single user
-exports.find = (req, res) => {
-  if (req.query.id) {
-    const id = req.query.id;
+// create and save new user
+exports.createUser = async (req, res) => {
+  const user = req.body;
+  
+  const newUser = new userModel({
+    ...user
+  })
 
-    usersDB.findById(id).then((data) => {
-      if (!data) {
-        res.status(404).send({ message: 'Not found user with id ' + id });
-      } else {
-        res.send(data);
-      }
-    });
+  try {
+    await user.save();
+    res.status(200).json(newUser);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong." });
   }
-  usersDB
-    .find()
-    .then((user) => {
-      res.send(user);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || 'Error Occurred while retrieving user information',
-      });
-    });
 };
 
 // update a new identified user by user id
-exports.update = (req, res) => {
-  const body = req.body;
-  if (!body) {
-    return res.status(400).send({
-      message: 'Data to update can not be empty',
-    });
-  }
+exports.updateUser = async (req, res) => {
+  const { id } = req.params;
+  const user = req.body;
 
-  const id = req.params.id;
-  res.status(200).send(body);
-  usersDB
-    .findByIdAndUpdate({ _id: id }, body, {
-      useFindAndModify: false,
-      new: true,
-    })
-    .then((data) => {
-      if (!data) {
-        res.status(404).send({
-          message: `Cannot Update user with ${id}. Maybe user not found`,
-        });
-      } else {
-        res.status(200).send(data);
-      }
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: 'Error Update user information',
-        error: err.message,
-      });
-    });
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send(`No post with id: ${id}`);
+
+  const updatedUser = await userModel.findByIdAndUpdate(id, user, {
+    new: true,
+  });
+  res.json(updatedUser);
 };
 
 // delete a user with specified user id in the request
-exports.delete = (req, res) => {
-  const id = req.params.id;
+exports.deleteUser = async (req, res) => {
+  const { id } = req.params;
 
-  usersDB
-    .findByIdAndDelete(id)
-    .then((data) => {
-      if (!data) {
-        res.status(404).send({
-          message: `Cannot Delete with id ${id}. Maybe id is wrong`,
-        });
-      } else {
-        res.send({
-          message: 'User was deleted successfully!',
-        });
-      }
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message: 'Could not delete User with id =' + id,
-        error: err.message,
-      });
-    });
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send(`No post with id: ${id}`);
+
+  await userModel.findByIdAndDelete(id);
+
+  res.json({ message: "Post Deleted successfully" });
 };

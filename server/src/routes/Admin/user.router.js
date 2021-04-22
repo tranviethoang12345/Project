@@ -1,30 +1,30 @@
 const router = require('express').Router();
 
-const renderServices = require('../../services/admin/render.service');
 const usersController = require('../../controllers/admin/users.controller');
 
 /**
- * @description admin crud
+ * @description Admin - User
  * @method GET /
  */
-router.get('/', renderServices.homeCrud);
+ router.get("/users", usersController.getUsers);
 
-/**
- * @description add_user
- * @method GET /add_user
- */
-router.get('/add_user', renderServices.add_user);
-
-/**
- * @description update_user
- * @method GET /update_user
- */
-router.get('/update_user', renderServices.update_user);
-
-// API CRUD
-router.post('/api/users', usersController.create);
-router.get('/api/users', usersController.find);
-router.put('/api/users/:id', usersController.update);
-router.delete('/api/users/:id', usersController.delete)
+ /**
+  * @description Admin - Create User
+  * @method POST /
+  */
+ router.post("/users", usersController.createUser);
+ 
+ /**
+  * @description Admin - Update User
+  * @method Patch /:id
+  */
+ router.patch("/users/:id", usersController.updateUser);
+ 
+ /**
+  * @description Admin - Delete User
+  * @method Delete /:id
+  */
+ router.delete("/users/:id", usersController.deleteUser);
+ 
 
 module.exports = router;

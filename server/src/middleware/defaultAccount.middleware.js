@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-catch */
 // Connect Database
-const accountModel = require('../models/users.model');
+const userModel = require('../models/users.model');
 
 exports.adminAccount = async (req, res, next) => {
   try {
@@ -11,11 +11,11 @@ exports.adminAccount = async (req, res, next) => {
     let gender = 'Other';
     let roleId = '604b2d3f36b2fd0610004e0c';
 
-    let accountRecord = await accountModel.findOne({ email });
+    let accountRecord = await userModel.findOne({ email });
     if (accountRecord) {
       return next();
     }
-    await accountModel.create({
+    await userModel.create({
       name,
       email,
       password,

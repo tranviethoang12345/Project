@@ -11,12 +11,21 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
+// Auth
 export const signIn = (formData) => {
   return API.post('/signIn', formData);
 };
 
 export const signUp = (formData) => API.post('/signUp', formData);
 
+// Admin - User
+export const fetchUser = () => API.get('/admin/users');
+export const createUser = (newUser) => API.post('/admin/users', newUser);
+export const updateUser = (id, updatedUser) =>
+  API.patch(`/admin/users/${id}`, updatedUser);
+export const deleteUser = (id) => API.delete(`/admin/users/${id}`);
+
+// Workspace
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const updatePost = (id, updatedPost) =>

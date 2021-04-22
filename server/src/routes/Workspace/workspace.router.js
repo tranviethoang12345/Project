@@ -28,7 +28,6 @@ router.patch("/:id", workspaceController.updatePost);
  */
 router.delete("/:id", workspaceController.deletePost);
 
-
 /**
  * @description Workspace - Like Post
  * @method Patch /:id/likePost

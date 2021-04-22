@@ -1,4 +1,5 @@
 import React from "react";
+
 import Header from "./includes/Header";
 import Navbar from "./includes/Navbar/Navbar";
 import CZMeeting from "./includes/sections/CZMeeting"
@@ -7,6 +8,7 @@ import Footer from "./includes/Footer";
 import "./includes/index.css";
 
 const Home = () => {
+
   return (
     <React.Fragment>
       <Header />

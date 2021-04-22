@@ -10,6 +10,8 @@ import imgPost from "../../../../assets/img/Workspace/post.png";
 const Navbar = () => {
   const classes = useStyles();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
+  console.log(user)
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
@@ -35,7 +37,7 @@ const Navbar = () => {
     setUser(JSON.parse(localStorage.getItem("profile")));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
-
+  
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <div className={classes.brandContainer}>

@@ -60,9 +60,14 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/admin">
+              <Typography
+                  class="nav-link"
+                  component={Link}
+                  color="secondary"
+                  to="/admin"
+                >
                   Admin
-                </a>
+                </Typography>
               </li>
               <li class="nav-item">
                 <Typography
