@@ -38,31 +38,17 @@ app.use(
   })
 );
 
-// // Run when client connects
-// io.on("connection", (socket) => {
-//   // Welcome current user
-//   socket.emit("me", socket.id);
-
-//   // Broadcast when a user connects
-//   socket.broadcast.emit("message", "A user has joined the chat");
-
-//   // Runs when client disconnects
-//   socket.on("disconnect", () => {
-//     io.emit("message", "A user has left");
-//   });
-// });
-
-app.get("/zoom", (req, res) => {
-  res.send("running")
-})
-
+// Run when client connects
 io.on('connection', (socket) => {
+  // Welcome current user
   socket.emit('me', socket.id);
 
+   // Runs when client disconnects
   socket.on('disconnect', () => {
     socket.broadcast.emit('callEnded');
   });
 
+  // Broadcast when a user connects
   socket.on('callUser', ({ userToCall, signalData, from, name }) => {
     io.to(userToCall).emit('callUser', { signal: signalData, from, name });
   });
@@ -86,9 +72,4 @@ const postRoutes = require("./config/routes");
 // Routes
 app.use("/", postRoutes);
 
-// Import Controller
-const errorPage = require("./controllers/error/error.controller");
-// Error Page
-app.use(errorPage.get404);
-
-module.exports = app;
+module.exports = server;

@@ -2,7 +2,12 @@ const tokenHelper = require("../helper/token.helper");
 
 exports.auth = async (req, res, next) => {
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    let token = "";
+
+    if (req.headers.authorization != undefined) {
+      token = req.headers.authorization.split(" ")[1];
+    }
+
     const isCustomAuth = token.length < 500;
 
     let decodedData;
