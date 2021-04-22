@@ -1,13 +1,18 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Auth from './components/Auth/Auth';
-import Home from './components/Home/Home';
-import Admin from './components/Admin/Admin';
-import VideoHome from './components/Video/VideoHome';
-import Workspace from './components/Workspace/Workspace';
-
-import AddUser from './components/Admin/includes/NewUser';
+// Authenticator
+import Auth from "./components/Auth/Auth";
+// Home
+import Home from "./components/Home/Home";
+// Zoom
+import VideoHome from "./components/Video/VideoHome";
+// Workspace
+import Workspace from "./components/Workspace/Workspace";
+// Admin
+import Admin from "./components/Admin/Admin";
+import AddUser from "./components/Admin/User/NewUser";
+import UpdateUser from "./components/Admin/User/UpdateUser";
 
 const App = () => {
   return (
@@ -18,13 +23,13 @@ const App = () => {
         {/* Home */}
         <Route path="/home" exact component={Home} />
         {/* Cam */}
-        <Route path="/video" exact component={VideoHome} />
+        <Route path="/zoom" exact component={VideoHome} />
         {/* Workspace */}
         <Route path="/workspace" exact component={Workspace} />
         {/* Admin */}
         <Route path="/admin" exact component={Admin} />
-        <Route path="/addUser" exact component={AddUser} />
-        
+        <Route path="/admin/newUser" exact component={AddUser} />
+        <Route path="/admin/updateUser" exact component={UpdateUser} />
       </Switch>
     </BrowserRouter>
   );

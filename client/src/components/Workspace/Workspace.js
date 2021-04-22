@@ -26,6 +26,7 @@ const Workspace = () => {
       document.body.classList.remove('workspace-body');
     };
   }, []);
+  
   return (
     <Container maxWidth="lg">
       <Navbar />

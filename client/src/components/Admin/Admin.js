@@ -1,24 +1,26 @@
-import React from 'react';
-import "./includes/index.css"
+import React from "react";
+import { Button } from "@material-ui/core";
+
+import "./includes/index.css";
 
 const Admin = () => {
   return (
     <React.Fragment>
       <header id="header">
-      <nav>
-        <div class="container">
-          <div class="text-center">
-            <a href="/home" class="nav-brand text-dark">
-              User Management System
-            </a>
+        <nav>
+          <div class="container">
+            <div class="text-center">
+              <a href="/home" class="nav-brand text-dark">
+                User Management System
+              </a>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
       <main id="site-main">
         <div class="container">
           <div class="box-nav d-flex-justify-between">
-            <a href="admin/add_user" class="border-shadow">
+            <a href="admin/newUser" class="border-shadow">
               <span class="text-gradient">
                 New User <i class="fas fa-user"></i>
               </span>
@@ -51,19 +53,19 @@ const Admin = () => {
                   <td>gender</td>
                   <td>role</td>
                   <td>
-                    <a
+                    <Button
                       href="/admin/update_user?id=<%= users[i]._id%>"
                       class="btn border-shadow update"
                     >
                       <span class="text-gradient">
                         <i class="fas fa-pencil-alt"></i>
                       </span>
-                    </a>
-                    <a class="btn border-shadow delete">
+                    </Button>
+                    <Button class="btn border-shadow delete">
                       <span class="text-gradient">
                         <i class="fas fa-times"></i>
                       </span>
-                    </a>
+                    </Button>
                   </td>
                 </tr>
               </tbody>

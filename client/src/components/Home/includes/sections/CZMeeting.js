@@ -29,7 +29,7 @@ const CZMeeting = (user) => {
                 {/* Button Join */}
                 <div>
                   <Button
-                    href="/room"
+                    href="/zoom"
                     class="btn btn-secondary font-weight-bold"
                   >
                     Join CZ-M
