@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { Typography, AppBar } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
-import VideoPlayer from "./VideoPlayer";
-import Sidebar from "./Sidebar";
-import Notifications from "./Notifications";
-import {ContextProvider} from "./Context";
+import VideoPlayer from "./includes/VideoPlayer";
+import Sidebar from "./includes/Sidebar";
+import Notifications from "./includes/Notifications";
+import Navbar from "../Workspace/includes/Navbar/Navbar";
+import { ContextProvider } from "./Context";
 
 import useStyles from "./includes/styles";
 import "./includes/styles.css";
@@ -25,11 +26,9 @@ const VideoHome = () => {
   return (
     <ContextProvider>
       <div className={classes.wrapper}>
-        <AppBar className={classes.appBar} position="static" color="inherit">
-          <Typography variant="h2" align="center">
-            Video Chat
-          </Typography>
-        </AppBar>
+        <Container>
+          <Navbar />
+        </Container>
         <VideoPlayer />
         <Sidebar>
           <Notifications />

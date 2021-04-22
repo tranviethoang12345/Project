@@ -6,7 +6,7 @@ const SocketContext = createContext();
 
 const URL = "http://localhost:3030";
 
-const socket = io(URL, { autoConnect: false });
+const socket = io(URL);
 // const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
