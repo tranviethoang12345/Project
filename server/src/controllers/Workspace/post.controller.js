@@ -1,5 +1,5 @@
-const postModel = require("../../models/postMessage.model");
-const mongoose = require("mongoose");
+const postModel = require('../../models/postMessage.model');
+const mongoose = require('mongoose');
 
 // get all post
 exports.getPosts = async (req, res) => {
@@ -53,13 +53,13 @@ exports.deletePost = async (req, res) => {
 
   await postModel.findByIdAndDelete(id);
 
-  res.json({ message: "Post Deleted successfully" });
+  res.json({ message: 'Post Deleted successfully' });
 };
 
 exports.likePost = async (req, res) => {
   const { id } = req.params;
 
-  if (!req.userId) return res.json({ message: "Unauthenticated" });
+  if (!req.userId) return res.json({ message: 'Unauthenticated' });
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No post with id: ${id}`);
@@ -76,11 +76,9 @@ exports.likePost = async (req, res) => {
     post.likes = post.likes.filter((id) => id !== String(req.userId));
   }
 
-  const updatedPost = await postModel.findByIdAndUpdate(
-    id,
-    post,
-    { new: true }
-  );
+  const updatedPost = await postModel.findByIdAndUpdate(id, post, {
+    new: true,
+  });
 
   res.json(updatedPost);
 };

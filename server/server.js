@@ -1,4 +1,4 @@
-const server = require("./src/index");
+const server = require('./src/index');
 
 // Port
 const PORT = process.env.PORT;

@@ -1,18 +1,18 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Authenticator
-import Auth from "./components/Auth/Auth";
+import Auth from './components/Auth/Auth';
 // Home
-import Home from "./components/Home/Home";
+import Home from './components/Home/Home';
 // Zoom
-import VideoHome from "./components/Video/VideoHome";
+import VideoHome from './components/Video/VideoHome';
 // Workspace
-import Workspace from "./components/Workspace/Workspace";
+import Workspace from './components/Workspace/Workspace';
 // Admin
-import Admin from "./components/Admin/Admin";
-import AddUser from "./components/Admin/Users/User/NewUser";
-import UpdateUser from "./components/Admin/Users/User/UpdateUser";
+import Admin from './components/Admin/Admin';
+import AddUser from './components/Admin/Users/User/NewUser';
+import UpdateUser from './components/Admin/Users/User/UpdateUser';
 
 const App = () => {
   return (

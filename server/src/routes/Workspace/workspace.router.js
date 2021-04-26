@@ -8,30 +8,30 @@ const workspaceController = require('../../controllers/Workspace/post.controller
  * @description Workspace - Posts
  * @method GET /
  */
-router.get("/", workspaceController.getPosts);
+router.get('/', workspaceController.getPosts);
 
 /**
  * @description Workspace - Create Post
  * @method POST /
  */
-router.post("/", workspaceController.createPost);
+router.post('/', workspaceController.createPost);
 
 /**
  * @description Workspace - Update Post
  * @method Patch /:id
  */
-router.patch("/:id", workspaceController.updatePost);
+router.patch('/:id', workspaceController.updatePost);
 
 /**
  * @description Workspace - Delete Post
  * @method Delete /:id
  */
-router.delete("/:id", workspaceController.deletePost);
+router.delete('/:id', workspaceController.deletePost);
 
 /**
  * @description Workspace - Like Post
  * @method Patch /:id/likePost
  */
-router.patch("/:id/likePost", workspaceController.likePost);
+router.patch('/:id/likePost', workspaceController.likePost);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const { sign, decode, verify } = require("jsonwebtoken");
+const { sign, decode, verify } = require('jsonwebtoken');
 
 exports.signToken = (payload, secret, expiredTime) => {
   return sign(payload, secret, {

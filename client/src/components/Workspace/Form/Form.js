@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
-import FileBase from "react-file-base64";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import FileBase from 'react-file-base64';
+import { useDispatch, useSelector } from 'react-redux';
 
-import useStyles from "./styles";
-import { createPost, updatePost } from "../../../actions/Workspace/posts";
+import useStyles from './styles';
+import { createPost, updatePost } from '../../../actions/Workspace/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
-    title: "",
-    message: "",
-    tags: "",
-    selectedImage: "",
-    selectedFile: "",
+    title: '',
+    message: '',
+    tags: '',
+    selectedImage: '',
+    selectedFile: '',
   });
 
   const post = useSelector((state) =>
@@ -21,7 +21,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const dispatch = useDispatch();
   const classes = useStyles();
-  const user = JSON.parse(localStorage.getItem("profile"));
+  const user = JSON.parse(localStorage.getItem('profile'));
 
   useEffect(() => {
     if (post) setPostData(post);
@@ -52,11 +52,11 @@ const Form = ({ currentId, setCurrentId }) => {
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      title: "",
-      message: "",
-      tags: "",
-      selectedImage: "",
-      selectedFile: "",
+      title: '',
+      message: '',
+      tags: '',
+      selectedImage: '',
+      selectedFile: '',
     });
   };
 
@@ -69,7 +69,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? "Editing" : "Creating"} a Memory
+          {currentId ? 'Editing' : 'Creating'} a Memory
         </Typography>
 
         {/* Title */}
@@ -102,7 +102,7 @@ const Form = ({ currentId, setCurrentId }) => {
           fullWidth
           value={postData.tags}
           onChange={(e) =>
-            setPostData({ ...postData, tags: e.target.value.split(",") })
+            setPostData({ ...postData, tags: e.target.value.split(',') })
           }
         />
 

@@ -1,11 +1,11 @@
-const tokenHelper = require("../helper/token.helper");
+const tokenHelper = require('../helper/token.helper');
 
 exports.auth = async (req, res, next) => {
   try {
-    let token = "";
+    let token = '';
 
     if (req.headers.authorization != undefined) {
-      token = req.headers.authorization.split(" ")[1];
+      token = req.headers.authorization.split(' ')[1];
     }
 
     const isCustomAuth = token.length < 500;
@@ -13,11 +13,11 @@ exports.auth = async (req, res, next) => {
     let decodedData;
 
     if (token && isCustomAuth) {
-      decodedData = tokenHelper.verifyToken(token, "test");
+      decodedData = tokenHelper.verifyToken(token, 'test');
 
       req.userId = decodedData?.id;
     } else {
-      decodedData = tokenHelper.decodeToken(token, "test");
+      decodedData = tokenHelper.decodeToken(token, 'test');
 
       req.userId = decodedData?.sub;
     }
