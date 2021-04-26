@@ -4,10 +4,10 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const URL = "http://localhost:3030";
+// const URL = "http://localhost:3030";
+const URL = "https://cz-m-project.herokuapp.com/";
 
 const socket = io(URL);
-// const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);

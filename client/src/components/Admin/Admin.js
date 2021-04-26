@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 import "./includes/index.css";
@@ -10,9 +11,9 @@ const Admin = () => {
         <nav>
           <div class="container">
             <div class="text-center">
-              <a href="/home" class="nav-brand text-dark">
+              <Button class="nav-brand text-dark" component={Link} to="/home">
                 User Management System
-              </a>
+              </Button>
             </div>
           </div>
         </nav>
@@ -20,11 +21,11 @@ const Admin = () => {
       <main id="site-main">
         <div class="container">
           <div class="box-nav d-flex-justify-between">
-            <a href="admin/newUser" class="border-shadow">
+            <Button class="border-shadow" component={Link} to="/admin/newUser">
               <span class="text-gradient">
                 New User <i class="fas fa-user"></i>
               </span>
-            </a>
+            </Button>
           </div>
 
           {/* Form handing */}

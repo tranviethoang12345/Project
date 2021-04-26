@@ -1,4 +1,7 @@
+Node:
 PORT=3030
-
 mongodb+srv://admin:admin@cluster0.tfybl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 mongodb+srv://admin:admin@cluster0.tfybl.mongodb.net/project-realtime?retryWrites=true&w=majority
+
+React:
+npm run build

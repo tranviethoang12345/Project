@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import img from "../../../../assets/img/Home/01.jpeg";
 
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 
 const CZMeeting = (user) => {
   return (
@@ -29,8 +30,9 @@ const CZMeeting = (user) => {
                 {/* Button Join */}
                 <div>
                   <Button
-                    href="/zoom"
                     class="btn btn-secondary font-weight-bold"
+                    component={Link}
+                    to="/zoom"
                   >
                     Join CZ-M
                   </Button>
