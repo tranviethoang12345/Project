@@ -11,8 +11,8 @@ import VideoHome from "./components/Video/VideoHome";
 import Workspace from "./components/Workspace/Workspace";
 // Admin
 import Admin from "./components/Admin/Admin";
-import AddUser from "./components/Admin/User/NewUser";
-import UpdateUser from "./components/Admin/User/UpdateUser";
+import AddUser from "./components/Admin/Users/User/NewUser";
+import UpdateUser from "./components/Admin/Users/User/UpdateUser";
 
 const App = () => {
   return (

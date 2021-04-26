@@ -4,8 +4,8 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-// const URL = "http://localhost:3030";
-const URL = "https://cz-m-project.herokuapp.com/";
+const URL = "http://localhost:3030";
+// const URL = "https://cz-m-project.herokuapp.com/";
 
 const socket = io(URL);
 

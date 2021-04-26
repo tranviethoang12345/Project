@@ -1,72 +1,67 @@
-import React from "react";
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
-const UpdateUser = () => {
+import Header from '../../includes/Header'
+
+const NewUser = () => {
   return (
     <React.Fragment>
-      <header id="header">
-        <nav>
-          <div class="container">
-            <div class="text-center">
-              <a href="/home" class="nav-brand text-dark">
-                User Management System
-              </a>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
-      {/* Main Site */}
       <main id="site-main">
         <div class="container">
           <div class="box-nav d-flex-justify-between">
             <div class="filter">
-              <a href="/admin">
-                {" "}
-                <i class="fas fa-angle-double-left"></i>All Users{" "}
-              </a>
+              <Button component={Link} to="/admin">
+                {' '}
+                <i class="fas fa-angle-double-left"></i>All Users{' '}
+              </Button>
             </div>
           </div>
           <div class="form-title text-center">
-            <h2 class="text-dark">Update User</h2>
+            <h2 class="text-dark">Create User</h2>
             <span class="text-light">
-              {" "}
-              Use the below form to Update an account{" "}
+              {' '}
+              Use the below form to Create an account{' '}
             </span>
           </div>
 
-          {/* form handing */}
-          <form method="POST" id="update_user">
+          {/* <add_user form */}
+          {/* <!-- form handing --> */}
+          <form action="/admin/api/users" method="POST" id="add_user">
             <div class="new_user">
-              {/* Full name */}
+              {/* <!-- Full name --> */}
               <div class="form-group">
                 <label for="fullName" class="text-light">
                   Full Name
                 </label>
-                <input type="hidden" name="id" value="<%= users._id %>" />
+                <input type="hidden" name="id" value="" />
                 <input
                   type="text"
                   name="fullName"
-                  value="<%= users.fullName %>"
+                  value=""
                   id=""
-                  placeholder="Tran Viet Hoang"
+                  placeholder="Full Name"
                 />
               </div>
 
-              {/* Username */}
+              {/* <!-- Username --> */}
               <div class="form-group">
                 <label for="username" class="text-light">
                   Username
                 </label>
+                <input type="hidden" name="id" value="" />
                 <input
                   type="text"
                   name="username"
-                  value="<%= users.username%>"
+                  value=""
                   id=""
-                  placeholder="Viet Hoang Max"
+                  placeholder="Username"
                 />
               </div>
 
-              {/* Email */}
+              {/* <!-- Email --> */}
               <div class="form-group">
                 <label for="Email" class="text-light">
                   Email
@@ -74,19 +69,33 @@ const UpdateUser = () => {
                 <input
                   type="text"
                   name="email"
-                  value="<%= users.email %>"
+                  value=""
                   id=""
-                  placeholder="example@gmail.com"
+                  placeholder="Email"
                 />
               </div>
 
-              {/* Gender */}
+              {/* <!-- Password --> */}
+              <div class="form-group">
+                <label for="Password" class="text-light">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  value=""
+                  id=""
+                  placeholder=""
+                />
+              </div>
+
+              {/* <!-- Gender --> */}
               <div class="form-group">
                 <label for="gender" class="text-light">
                   Gender
                 </label>
                 <div class="radio inline">
-                  <input type="radio" name="gender" id="radio-2" value="Male" />
+                  <input type="radio" name="gender" value="Male" id="radio-2" />
                   <label for="radio-2" class="radio-label">
                     Male
                   </label>
@@ -95,8 +104,8 @@ const UpdateUser = () => {
                   <input
                     type="radio"
                     name="gender"
-                    id="radio-3"
                     value="Female"
+                    id="radio-3"
                   />
                   <label for="radio-3" class="radio-label">
                     Female
@@ -104,7 +113,7 @@ const UpdateUser = () => {
                 </div>
               </div>
 
-              {/* Status */}
+              {/* <!-- Status --> */}
               <div class="form-group">
                 <label for="status" class="text-light">
                   Status
@@ -113,8 +122,8 @@ const UpdateUser = () => {
                   <input
                     type="radio"
                     name="status"
-                    id="radio-4"
                     value="Active"
+                    id="radio-4"
                   />
                   <label for="radio-4" class="radio-label">
                     Active
@@ -124,8 +133,8 @@ const UpdateUser = () => {
                   <input
                     type="radio"
                     name="status"
-                    id="radio-5"
                     value="Inactive"
+                    id="radio-5"
                   />
                   <label for="radio-5" class="radio-label">
                     Inactive
@@ -133,7 +142,7 @@ const UpdateUser = () => {
                 </div>
               </div>
 
-              {/* Role Name */}
+              {/* <!-- roleName --> */}
               <div class="form-group">
                 <label for="roleName" class="text-light">
                   Role
@@ -162,7 +171,7 @@ const UpdateUser = () => {
                 </div>
               </div>
 
-              {/* Button Submit */}
+              {/* <!-- Button Submit --> */}
               <div class="form-group">
                 <button type="submit" class="btn text-dark update">
                   Save
@@ -176,4 +185,4 @@ const UpdateUser = () => {
   );
 };
 
-export default UpdateUser;
+export default NewUser;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 
 const Header = () => {
   return (
@@ -23,13 +23,15 @@ const Header = () => {
             >
               Be Smart and Work Hard
             </Typography>
-            <Typography
+            
+            {/* Zoom */}
+            <Button
               class="btn btn-primary btn-xl rounded-pill mt-5"
               component={Link}
-              to="/home"
+              to="/zoom"
             >
               Let's Start
-            </Typography>
+            </Button>
           </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>

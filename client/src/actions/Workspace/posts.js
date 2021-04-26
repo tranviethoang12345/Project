@@ -7,7 +7,7 @@ import {
 } from "../../constants/actionTypes";
 import * as api from "../../api";
 
-// Action Creators
+// Action Get All Posts
 export const getPosts = () => async (dispatch) => {
   try {
     const { data } = await api.fetchPosts();
@@ -18,6 +18,7 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
+// Action Create Post
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);
@@ -29,6 +30,7 @@ export const createPost = (post) => async (dispatch) => {
   }
 };
 
+// Action Update Post
 export const updatePost = (id, post) => async (dispatch) => {
   try {
     const { data } = await api.updatePost(id, post);
@@ -39,6 +41,7 @@ export const updatePost = (id, post) => async (dispatch) => {
   }
 };
 
+// Action Delete Post
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
@@ -49,6 +52,7 @@ export const deletePost = (id) => async (dispatch) => {
   }
 };
 
+// Action Like Post
 export const likePost = (id) => async (dispatch) => {
   try {
     const { data } = await api.likePost(id);

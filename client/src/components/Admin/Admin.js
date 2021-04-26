@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import { Button } from "@material-ui/core";
 
+import Header from "./includes/Header";
+import Users from "./Users/Users";
 import "./includes/index.css";
 
+import { getUsers } from "../../actions/Admin/User";
+
 const Admin = () => {
+  const [currentId, setCurrentId] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [currentId, dispatch]);
+
   return (
     <React.Fragment>
-      <header id="header">
-        <nav>
-          <div class="container">
-            <div class="text-center">
-              <Button class="nav-brand text-dark" component={Link} to="/home">
-                User Management System
-              </Button>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <Header />
+
       <main id="site-main">
         <div class="container">
           <div class="box-nav d-flex-justify-between">
@@ -28,50 +31,8 @@ const Admin = () => {
             </Button>
           </div>
 
-          {/* Form handing */}
-          <form action="/" method="POST">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Status</th>
-                  <th>Gender</th>
-                  <th>Role</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* include show all */}
-                <tr>
-                  <td>1</td>
-                  <td>fullName</td>
-                  <td>username</td>
-                  <td>Email</td>
-                  <td>status</td>
-                  <td>gender</td>
-                  <td>role</td>
-                  <td>
-                    <Button
-                      href="/admin/update_user?id=<%= users[i]._id%>"
-                      class="btn border-shadow update"
-                    >
-                      <span class="text-gradient">
-                        <i class="fas fa-pencil-alt"></i>
-                      </span>
-                    </Button>
-                    <Button class="btn border-shadow delete">
-                      <span class="text-gradient">
-                        <i class="fas fa-times"></i>
-                      </span>
-                    </Button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
+          {/* User Form */}
+          <Users setCurrentId={setCurrentId}/>
         </div>
       </main>
     </React.Fragment>

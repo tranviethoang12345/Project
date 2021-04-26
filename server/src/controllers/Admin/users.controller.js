@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 // get all users
 exports.getUsers = async (req, res) => {
   try {
-    const postMessage = await postModel.find();
+    const user = await userModel.find();
 
-    res.status(200).json(postMessage);
+    res.status(200).json(user);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

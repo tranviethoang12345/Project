@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API = axios.create({ baseURL: 'http://localhost:3030' });
-const API = axios.create({ baseURL: "https://cz-m-project.herokuapp.com/" });
+const API = axios.create({ baseURL: 'http://localhost:3030' });
+// const API = axios.create({ baseURL: "https://cz-m-project.herokuapp.com/" });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
@@ -20,7 +20,7 @@ export const signIn = (formData) => {
 export const signUp = (formData) => API.post("/signUp", formData);
 
 // Admin - User
-export const fetchUser = () => API.get("/admin/users");
+export const fetchUsers = () => API.get("/admin/users");
 export const createUser = (newUser) => API.post("/admin/users", newUser);
 export const updateUser = (id, updatedUser) =>
   API.patch(`/admin/users/${id}`, updatedUser);
