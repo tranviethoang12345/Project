@@ -103,7 +103,7 @@ const Post = ({ post, setCurrentId }) => {
         <Typography className={classes.title} variant="h5">
           File:
         </Typography>
-        <Button 
+        <Button
           className={classes.buttonFileDownload}
           variant="contained"
           color="primary"

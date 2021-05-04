@@ -1,5 +1,5 @@
 const userModel = require('../../models/users.model');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 // get all users
 exports.getUsers = async (req, res) => {
@@ -15,16 +15,16 @@ exports.getUsers = async (req, res) => {
 // create and save new user
 exports.createUser = async (req, res) => {
   const user = req.body;
-  
+
   const newUser = new userModel({
-    ...user
-  })
+    ...user,
+  });
 
   try {
     await user.save();
     res.status(200).json(newUser);
   } catch (error) {
-    res.status(500).json({ message: "Something went wrong." });
+    res.status(500).json({ message: 'Something went wrong.' });
   }
 };
 
@@ -51,5 +51,5 @@ exports.deleteUser = async (req, res) => {
 
   await userModel.findByIdAndDelete(id);
 
-  res.json({ message: "Post Deleted successfully" });
+  res.json({ message: 'Post Deleted successfully' });
 };

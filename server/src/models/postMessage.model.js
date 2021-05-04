@@ -1,5 +1,5 @@
 // Import NPM
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -26,7 +26,7 @@ const postSchema = new Schema(
 );
 
 // Compile the model from the schema
-const post = mongoose.model("post", postSchema);
+const post = mongoose.model('post', postSchema);
 
 // Export
 module.exports = post;

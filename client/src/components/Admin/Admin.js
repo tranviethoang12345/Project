@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Button } from "@material-ui/core";
+import { Button } from '@material-ui/core';
 
-import Header from "./includes/Header";
-import Users from "./Users/Users";
-import "./includes/index.css";
+import Header from './includes/Header';
+import Users from './Users/Users';
+import './includes/index.css';
 
-import { getUsers } from "../../actions/Admin/User";
+import { getUsers } from '../../actions/Admin/User';
 
 const Admin = () => {
   const [currentId, setCurrentId] = useState(null);
@@ -32,7 +32,7 @@ const Admin = () => {
           </div>
 
           {/* User Form */}
-          <Users setCurrentId={setCurrentId}/>
+          <Users setCurrentId={setCurrentId} />
         </div>
       </main>
     </React.Fragment>

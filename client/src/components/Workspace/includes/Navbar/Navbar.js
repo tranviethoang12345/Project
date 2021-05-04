@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import decode from "jwt-decode";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 
-import { AppBar, Avatar, Typography, Toolbar, Button } from "@material-ui/core";
-import useStyles from "./styles";
-import imgPost from "../../../../assets/img/Workspace/post.png";
+import { AppBar, Avatar, Typography, Toolbar, Button } from '@material-ui/core';
+import useStyles from './styles';
+import imgPost from '../../../../assets/img/Workspace/post.png';
 
 const Navbar = () => {
   const classes = useStyles();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-  console.log(user)
+  console.log(user);
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
 
   const logout = () => {
-    dispatch({ type: "LOGOUT" });
+    dispatch({ type: 'LOGOUT' });
 
-    history.push("/");
+    history.push('/');
 
     setUser(null);
   };
@@ -34,10 +34,10 @@ const Navbar = () => {
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
 
-    setUser(JSON.parse(localStorage.getItem("profile")));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setUser(JSON.parse(localStorage.getItem('profile')));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
-  
+
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       {}
@@ -54,7 +54,7 @@ const Navbar = () => {
         <img
           className={classes.image}
           src={imgPost}
-          alt="imgPost" 
+          alt="imgPost"
           height="60"
         />
       </div>
@@ -81,12 +81,7 @@ const Navbar = () => {
             </Button>
           </div>
         ) : (
-          <Button
-            component={Link}
-            to="/"
-            variant="contained"
-            color="primary"
-          >
+          <Button component={Link} to="/" variant="contained" color="primary">
             Sign In
           </Button>
         )}

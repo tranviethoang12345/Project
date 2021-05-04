@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
-import Header from '../../includes/Header'
+import Header from '../../includes/Header';
 
 const NewUser = () => {
   return (
@@ -21,7 +21,7 @@ const NewUser = () => {
           </div>
           <div class="form-title text-center">
             <h2 class="text-dark">Create User</h2>
-            <span class="text-light">
+            <span class="text-dark">
               {' '}
               Use the below form to Create an account{' '}
             </span>
@@ -33,7 +33,7 @@ const NewUser = () => {
             <div class="new_user">
               {/* <!-- Full name --> */}
               <div class="form-group">
-                <label for="fullName" class="text-light">
+                <label for="fullName" class="text-dark">
                   Full Name
                 </label>
                 <input type="hidden" name="id" value="" />
@@ -48,7 +48,7 @@ const NewUser = () => {
 
               {/* <!-- Username --> */}
               <div class="form-group">
-                <label for="username" class="text-light">
+                <label for="username" class="text-dark">
                   Username
                 </label>
                 <input type="hidden" name="id" value="" />
@@ -63,7 +63,7 @@ const NewUser = () => {
 
               {/* <!-- Email --> */}
               <div class="form-group">
-                <label for="Email" class="text-light">
+                <label for="Email" class="text-dark">
                   Email
                 </label>
                 <input
@@ -77,7 +77,7 @@ const NewUser = () => {
 
               {/* <!-- Password --> */}
               <div class="form-group">
-                <label for="Password" class="text-light">
+                <label for="Password" class="text-dark">
                   Password
                 </label>
                 <input
@@ -91,7 +91,7 @@ const NewUser = () => {
 
               {/* <!-- Gender --> */}
               <div class="form-group">
-                <label for="gender" class="text-light">
+                <label for="gender" class="text-dark">
                   Gender
                 </label>
                 <div class="radio inline">
@@ -115,7 +115,7 @@ const NewUser = () => {
 
               {/* <!-- Status --> */}
               <div class="form-group">
-                <label for="status" class="text-light">
+                <label for="status" class="text-dark">
                   Status
                 </label>
                 <div class="radio inline">
@@ -144,7 +144,7 @@ const NewUser = () => {
 
               {/* <!-- roleName --> */}
               <div class="form-group">
-                <label for="roleName" class="text-light">
+                <label for="roleName" class="text-dark">
                   Role
                 </label>
                 <div class="checkbox inline">

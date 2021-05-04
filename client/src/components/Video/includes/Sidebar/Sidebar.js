@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext } from 'react';
 import {
   Button,
   TextField,
@@ -24,7 +24,7 @@ const Sidebar = ({ children }) => {
     leaveCall,
     callUser,
   } = useContext(SocketContext);
-  const [idToCall, setIdToCall] = useState("");
+  const [idToCall, setIdToCall] = useState('');
   const classes = useStyles();
 
   return (
