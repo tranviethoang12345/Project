@@ -37,6 +37,7 @@ const ContextProvider = ({ children }) => {
     });
   }, []);
 
+  // Answer User
   const answerCall = () => {
     setCallAccepted(true);
 
@@ -55,6 +56,7 @@ const ContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
 
+  // Call User
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
@@ -80,6 +82,7 @@ const ContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
 
+  // Leave  User
   const leaveCall = () => {
     setCallEnded(true);
 

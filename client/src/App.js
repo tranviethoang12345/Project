@@ -6,7 +6,7 @@ import Auth from "./components/Auth/Auth";
 // Home
 import Home from "./components/Home/Home";
 // Zoom
-import VideoHome from "./components/Video/VideoHome";
+import VideoHome from "./components/Video/VideoHome/VideoHome";
 // Workspace
 import Workspace from "./components/Workspace/Workspace";
 // Admin

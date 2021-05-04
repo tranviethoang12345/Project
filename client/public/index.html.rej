@@ -1,0 +1,9 @@
+diff a/client/public/index.html b/client/public/index.html	(rejected hunks)
+@@ -60,7 +60,6 @@
+     />
+ 
+     <title>CZ - M</title>
+-    
+   </head>
+   <body>
+     <div id="root"></div>

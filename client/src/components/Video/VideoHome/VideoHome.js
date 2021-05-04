@@ -1,24 +1,22 @@
 import React, { useEffect } from "react";
 import { Container } from "@material-ui/core";
 
-import VideoPlayer from "./includes/VideoPlayer";
-import Sidebar from "./includes/Sidebar";
-import Notifications from "./includes/Notifications";
-import Navbar from "../Workspace/includes/Navbar/Navbar";
-import { ContextProvider } from "./Context";
+import VideoPlayer from "../includes/VideoPlayer/VideoPlayer";
+import Sidebar from "../includes/Sidebar/Sidebar";
+import Notifications from "../includes/Notifications";
+import Navbar from "../../Workspace/includes/Navbar/Navbar";
+import { ContextProvider } from "../SocketContext";
 
-import useStyles from "./includes/styles";
-import "./includes/styles.css";
+import useStyles from "./styles";
+import "../includes/styles.css";
 
 const VideoHome = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    console.log("enter page");
     document.body.classList.add("zoom-body");
 
     return () => {
-      console.log("leave page");
       document.body.classList.remove("zoom-body");
     };
   }, []);
