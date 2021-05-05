@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
 import {
   Button,
   TextField,
@@ -12,7 +12,7 @@ import { Assignment, Phone, PhoneDisabled } from "@material-ui/icons";
 
 import { SocketContext } from "../../SocketContext";
 
-import useStyles from "./styles" 
+import useStyles from "./styles";
 
 const Sidebar = ({ children }) => {
   const {
@@ -24,7 +24,7 @@ const Sidebar = ({ children }) => {
     leaveCall,
     callUser,
   } = useContext(SocketContext);
-  const [idToCall, setIdToCall] = useState('');
+  const [idToCall, setIdToCall] = useState("");
   const classes = useStyles();
 
   return (
@@ -32,16 +32,21 @@ const Sidebar = ({ children }) => {
       <Paper elevation={10} className={classes.paper}>
         <form className={classes.root} noValidate autoComplete="off">
           <Grid container className={classes.gridContainer}>
+            {/* Left Container */}
             <Grid item xs={12} md={6} className={classes.padding}>
               <Typography gutterBottom variant="h6">
                 Account Info
               </Typography>
+
+              {/* Name */}
               <TextField
                 label="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 fullWidth
               />
+
+              {/* Copy ID */}
               <CopyToClipboard text={me} className={classes.margin}>
                 <Button
                   variant="contained"
@@ -53,16 +58,22 @@ const Sidebar = ({ children }) => {
                 </Button>
               </CopyToClipboard>
             </Grid>
+
+            {/* Right Container */}
             <Grid item xs={12} md={6} className={classes.padding}>
               <Typography gutterBottom variant="h6">
                 Make a call
               </Typography>
+
+              {/* ID Call */}
               <TextField
                 label="ID to call"
                 value={idToCall}
                 onChange={(e) => setIdToCall(e.target.value)}
                 fullWidth
               />
+
+              {/* Call && End Call */}
               {callAccepted && !callEnded ? (
                 <Button
                   variant="contained"

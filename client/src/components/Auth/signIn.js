@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { Button } from '@material-ui/core';
 
-import { signIn } from '../../actions/Auth/auth';
+import { signIn } from '../../actions/Auth/Auth';
 
 const initialState = {
   email: '',

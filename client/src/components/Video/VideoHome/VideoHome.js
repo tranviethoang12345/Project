@@ -15,11 +15,14 @@ const VideoHome = () => {
 
   useEffect(() => {
     document.body.classList.add("zoom-body");
-
     return () => {
       document.body.classList.remove("zoom-body");
     };
   }, []);
+
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
 
   return (
     <ContextProvider>
@@ -31,6 +34,9 @@ const VideoHome = () => {
         <Sidebar>
           <Notifications />
         </Sidebar>
+        <div>
+          <button onClick={refreshPage}>Click to reload!</button>
+        </div>
       </div>
     </ContextProvider>
   );

@@ -8,7 +8,6 @@ exports.adminAccount = async (req, res, next) => {
     let password = '12345678';
     let email = 'admin@gmail.com';
     let status = 'Active';
-    let gender = 'Other';
     let roleId = '604b2d3f36b2fd0610004e0c';
 
     let accountRecord = await userModel.findOne({ email });
@@ -20,7 +19,6 @@ exports.adminAccount = async (req, res, next) => {
       email,
       password,
       status,
-      gender,
       roleId,
     });
 

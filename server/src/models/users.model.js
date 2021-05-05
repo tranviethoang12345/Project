@@ -30,10 +30,6 @@ const userSchema = new Schema(
       type: String,
     },
 
-    gender: {
-      type: String,
-    },
-
     roleId: {
       type: Schema.Types.ObjectId,
       ref: 'normal',

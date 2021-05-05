@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 import { Typography } from "@material-ui/core";
-import useStyles from "./styles";
 
 
 const Navbar = () => {

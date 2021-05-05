@@ -1,15 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const SignUp = () => {
+import { Button } from '@material-ui/core';
+
+const SignUp = (handleSubmit, handleChange) => {
   return (
     <React.Fragment>
-      <form
-        action="/admin/api/users"
-        method="POST"
-        class="sign-up-form"
-        id="registration"
-      >
-        <h2 class="registration">Register</h2>
+      <form class="sign-up-form" onSubmit={handleSubmit}>
+        <h2 class="title">Register</h2>
 
         {/* Username */}
         <div class="input-field">
@@ -17,17 +14,24 @@ const SignUp = () => {
           <input
             type="text"
             name="username"
-            value=""
-            id=""
+            required
+            autoFocus
             placeholder="Username"
+            onChange={handleChange}
           />
-          <input type="hidden" name="id" value="" id="" />
         </div>
 
         {/* Email */}
         <div class="input-field">
           <i class="fas fa-envelope"></i>
-          <input type="email" name="email" value="" id="" placeholder="Email" />
+          <input
+            type="email"
+            name="email"
+            required
+            autoFocus
+            placeholder="Email"
+            onChange={handleChange}
+          />
         </div>
 
         {/* Password */}
@@ -36,14 +40,17 @@ const SignUp = () => {
           <input
             type="password"
             name="password"
-            value=""
-            id=""
+            required
+            autoFocus
             placeholder="Password"
+            onChange={handleChange}
           />
         </div>
 
         {/* submit Sign Up */}
-        <input type="submit" class="btn" value="Sign up" />
+        <Button type="submit" class="btn" value="Sign up">
+          Sign up
+        </Button>
 
         <p class="social-text">Or Sign up with social platforms</p>
         <div class="social-media">

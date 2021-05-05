@@ -21,7 +21,7 @@ exports.createPost = async (req, res) => {
     creator: req.userId,
     createdAt: new Date().toISOString(),
   });
-
+  
   try {
     await newPost.save();
     res.status(200).json(newPost);
