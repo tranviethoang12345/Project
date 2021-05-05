@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
+import { signIn } from "../../actions/Auth/Auth";
+import Social from "./Social";
 
-import { signIn } from '../../actions/Auth/Auth';
-
-const initialState = {
-  email: '',
-  password: '',
-};
-
-const SignIn = () => {
+const SignIn = (initialState) => {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -63,20 +58,7 @@ const SignIn = () => {
 
         {/* Social */}
         <p class="social-text">Or Sign in with social platforms</p>
-        <div class="social-media">
-          <button class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-google"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </button>
-        </div>
+        <Social />
       </form>
     </React.Fragment>
   );

@@ -4,8 +4,11 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Panel from './includes/Panel';
 
+const initialState = { username: '', email: '', password: ''};
+
 export const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
+
   const handleSignUp = (e) => {
     setIsSignUp(true);
   };
@@ -20,10 +23,10 @@ export const Auth = () => {
         <div class="forms-container">
           <div class="signin-signup">
             {/* include sign in */}
-            <SignIn />
+            <SignIn initialState={initialState} />
 
             {/* include sign up */}
-            <SignUp />
+            <SignUp initialState={initialState} />
           </div>
         </div>
         {/* include Panel */}

@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
+import { signUp } from "../../actions/Auth/Auth";
+import Social from "./Social";
 
-const SignUp = (handleSubmit, handleChange) => {
+const SignUp = (initialState) => {
+  const [formData, setFormData] = useState();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signUp(formData, history));
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   return (
     <React.Fragment>
-      <form class="sign-up-form" onSubmit={handleSubmit}>
+      <form action="signup" class="sign-up-form" onSubmit={handleSubmit}>
         <h2 class="title">Register</h2>
 
         {/* Username */}
@@ -52,21 +68,9 @@ const SignUp = (handleSubmit, handleChange) => {
           Sign up
         </Button>
 
+        {/* Social */}
         <p class="social-text">Or Sign up with social platforms</p>
-        <div class="social-media">
-          <button class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-google"></i>
-          </button>
-          <button class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-          </button>
-        </div>
+        <Social />
       </form>
     </React.Fragment>
   );
