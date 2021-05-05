@@ -6,13 +6,13 @@ const authController = require('../../controllers/Auth/auth.controller');
 
 /**
  * @description SignIn User
- * @method POST /SignIn
+ * @method POST /signIn
  */
 router.post('/signIn', authController.signIn);
 
 /**
- * @description Home
- * @method POST /home
+ * @description SignUp User
+ * @method POST /signUp
  */
 router.post('/signUp', authController.signUp);
 

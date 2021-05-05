@@ -13,10 +13,7 @@ API.interceptors.request.use((req) => {
 });
 
 // Auth
-export const signIn = (formData) => {
-  return API.post('/signIn', formData);
-};
-
+export const signIn = (formData) => API.post('/signIn', formData);
 export const signUp = (formData) => API.post('/signUp', formData);
 
 // Admin - User

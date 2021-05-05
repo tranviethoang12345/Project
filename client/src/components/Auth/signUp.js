@@ -6,12 +6,13 @@ import { Button } from "@material-ui/core";
 import { signUp } from "../../actions/Auth/Auth";
 import Social from "./Social";
 
-const SignUp = (initialState) => {
+const SignUp = () => {
   const [formData, setFormData] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleSubmit = (e) => {
+    debugger;
     e.preventDefault();
     dispatch(signUp(formData, history));
   };
@@ -21,7 +22,7 @@ const SignUp = (initialState) => {
   };
   return (
     <React.Fragment>
-      <form action="signup" class="sign-up-form" onSubmit={handleSubmit}>
+      <form class="sign-up-form" onSubmit={handleSubmit}>
         <h2 class="title">Register</h2>
 
         {/* Username */}

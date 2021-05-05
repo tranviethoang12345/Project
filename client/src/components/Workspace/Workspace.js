@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/Workspace/posts';
 import Navbar from './includes/Navbar/Navbar';
 import Posts from './Posts/Posts';
-import Form from './Form/Form';
+import PostForm from './PostForm/PostForm';
 
 import './includes/index.css';
 
@@ -42,7 +42,7 @@ const Workspace = () => {
               <Posts setCurrentId={setCurrentId} />
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Form currentId={currentId} setCurrentId={setCurrentId} />
+              <PostForm currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>
           </Grid>
         </Container>

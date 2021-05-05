@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useStyles from './styles';
 import { createPost, updatePost } from '../../../actions/Workspace/posts';
 
-const Form = ({ currentId, setCurrentId }) => {
+const PostForm = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     title: '',
     message: '',
@@ -162,4 +162,4 @@ const Form = ({ currentId, setCurrentId }) => {
   );
 };
 
-export default Form;
+export default PostForm;

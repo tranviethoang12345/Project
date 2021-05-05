@@ -57,7 +57,7 @@ const SignIn = (initialState) => {
         </Button>
 
         {/* Social */}
-        <p class="social-text">Or Sign in with social platforms</p>
+        <p class="social-text">Or Sgn in with social platforms</p>
         <Social />
       </form>
     </React.Fragment>
