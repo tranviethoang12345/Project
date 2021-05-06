@@ -4,7 +4,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Panel from './includes/Panel';
 
-const initialState = { username: '', email: '', password: ''};
+const initialState = { username: '', email: '', password: '' };
 
 export const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(false);
