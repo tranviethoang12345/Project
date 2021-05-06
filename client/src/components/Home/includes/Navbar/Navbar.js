@@ -38,7 +38,7 @@ const Navbar = () => {
     <React.Fragment>
       {/* Navigation */}
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <Container>
+        <div class="container">
           {/* Left */}
           <Typography class="navbar-brand" component={Link} to="/home">
             {user.result.name}
@@ -85,7 +85,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </Container>
+        </div>
       </nav>
     </React.Fragment>
   );

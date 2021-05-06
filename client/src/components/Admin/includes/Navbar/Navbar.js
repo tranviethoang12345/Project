@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Container } from '@material-ui/core';
+import { Button, Container, Typography } from '@material-ui/core';
+import useStyles from './styles'
 
 const Header = () => {
+  const classes = useStyles();
   return (
     <React.Fragment>
       <header id="header">

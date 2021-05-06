@@ -12,7 +12,6 @@ const SignUp = () => {
   const history = useHistory();
 
   const handleSubmit = (e) => {
-    debugger;
     e.preventDefault();
     dispatch(signUp(formData, history));
   };

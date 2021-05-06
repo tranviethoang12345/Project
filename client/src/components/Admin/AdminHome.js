@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Container, Grid, Button } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
-import Header from "./includes/Header";
+import Navbar from "./includes/Navbar/Navbar"
 import Users from "./Users/Users";
 import UserFrom from "./UserFrom/UserFrom";
 import "./includes/index.css";
@@ -20,15 +19,8 @@ const AdminHome = () => {
 
   return (
     <React.Fragment>
-      <Header />
+      <Navbar />
         <Container maxWidth="lg">
-          <div class="box-nav d-flex-justify-between">
-            <Button class="border-shadow" component={Link} to="/admin/newUser">
-              <span class="text-gradient">
-                New User <i class="fas fa-user"></i>
-              </span>
-            </Button>
-          </div>
           <Grid
             container
             justify="space-between"

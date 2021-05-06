@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Grid, LinearProgress, Container } from "@material-ui/core";
 
 import User from "./User/User";
+import UsersT from "./UsersT"
 import useStyles from "./styles";
 
 const Users = ({ setCurrentId }) => {
@@ -36,13 +37,14 @@ const Users = ({ setCurrentId }) => {
     <Grid>
       <Container>
         {/* include show all */}
-        <tr>
+        <UsersT />
+        <tbody>
           {users.map((user) => (
             <Grid key={user._id}>
               <User user={user} />
             </Grid>
           ))}
-        </tr>
+        </tbody>
       </Container>
     </Grid>
   );

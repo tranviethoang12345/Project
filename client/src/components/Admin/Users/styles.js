@@ -4,4 +4,7 @@ export default makeStyles(() => ({
   root: {
     width: "100%",
   },
+  table: {
+    minWidth: 700,
+  },
 }));

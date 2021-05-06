@@ -6,22 +6,19 @@ import { useDispatch } from "react-redux";
 import { Button } from "@material-ui/core";
 
 import { deleteUser } from "../../../../actions/Admin/User";
-import HeaderUser from "./HeaderUser";
 import Users from "../Users";
 
 const User = (data) => {
   const dispatch = useDispatch();
   return (
     <React.Fragment>
-      <HeaderUser />
-      <tr>
-        <td>1</td>
-        <td>{data.user.name}</td>
-        <td>{data.user.email}</td>
-        <td>{data.user.status}</td>
-        <td>{data.user.gender}</td>
-        <td>role</td>
-
+      <tbody>
+      <td>1</td>
+      <td>{data.user.name}</td>
+      <td>{data.user.email}</td>
+      <td>{data.user.status}</td>
+      <td>role</td>
+      <div>
         <td>
           {/* Update */}
           <Button
@@ -45,7 +42,8 @@ const User = (data) => {
             </span>
           </Button>
         </td>
-      </tr>
+      </div>
+      </tbody>
     </React.Fragment>
   );
 };

@@ -11,8 +11,6 @@ import VideoHome from "./components/Video/VideoHome/VideoHome";
 import Workspace from "./components/Workspace/Workspace";
 // Admin
 import AdminHome from "./components/Admin/AdminHome";
-import AddUser from "./components/Admin/Users/User/NewUser";
-import UpdateUser from "./components/Admin/Users/User/UpdateUser";
 
 const App = () => {
   return (
@@ -28,8 +26,6 @@ const App = () => {
         <Route path="/workspace" exact component={Workspace} />
         {/* Admin */}
         <Route path="/admin" exact component={AdminHome} />
-        <Route path="/admin/newUser" exact component={AddUser} />
-        <Route path="/admin/updateUser" exact component={UpdateUser} />
       </Switch>
     </BrowserRouter>
   );
