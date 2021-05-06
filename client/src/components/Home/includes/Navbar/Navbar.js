@@ -3,7 +3,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
-import { Typography } from "@material-ui/core";
+import { Typography, Container } from "@material-ui/core";
 
 
 const Navbar = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
     <React.Fragment>
       {/* Navigation */}
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
+        <Container>
           {/* Left */}
           <Typography class="navbar-brand" component={Link} to="/home">
             {user.result.name}
@@ -85,7 +85,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </Container>
       </nav>
     </React.Fragment>
   );

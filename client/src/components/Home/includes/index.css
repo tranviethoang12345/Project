@@ -1,4 +1,4 @@
-body {
+body.home-body {
   font-family: 'Lato';
 }
 
@@ -7,7 +7,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6.home-body {
   font-family: 'Catamaran';
   font-weight: 800 !important;
 }

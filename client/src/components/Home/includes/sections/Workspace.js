@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 
 import img from "../../../../assets/img/Home/02.jpeg";
 
@@ -8,7 +8,7 @@ const Workspace = (user) => {
   return (
     <React.Fragment>
       <section>
-        <div class="container">
+        <Container>
           <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1">
               <div class="p-5">
@@ -41,7 +41,7 @@ const Workspace = (user) => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </React.Fragment>
   );

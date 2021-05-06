@@ -41,8 +41,13 @@ app.use(
 // Run when client connects
 io.on('connection', (socket) => {
   // Welcome current user
-  socket.emit('me', socket.id);
+  console.log(socket);
 
+  if (socket.result !== undefined  && socket.result.id !== undefined) {
+    socket.emit('me', socket.result.id);
+  }
+
+  
    // Runs when client disconnects
   socket.on('disconnect', () => {
     socket.broadcast.emit('callEnded');

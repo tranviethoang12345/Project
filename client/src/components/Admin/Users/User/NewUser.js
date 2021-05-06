@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 
 import Header from '../../includes/Header';
 
@@ -10,7 +10,7 @@ const NewUser = () => {
       <Header />
 
       <main id="site-main">
-        <div class="container">
+        <Container>
           <div class="box-nav d-flex-justify-between">
             <div class="filter">
               <Button component={Link} to="/admin">
@@ -179,7 +179,7 @@ const NewUser = () => {
               </div>
             </div>
           </form>
-        </div>
+        </Container>
       </main>
     </React.Fragment>
   );

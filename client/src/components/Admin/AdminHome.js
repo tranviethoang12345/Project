@@ -21,7 +21,7 @@ const AdminHome = () => {
   return (
     <React.Fragment>
       <Header />
-        <Container>
+        <Container maxWidth="lg">
           <div class="box-nav d-flex-justify-between">
             <Button class="border-shadow" component={Link} to="/admin/newUser">
               <span class="text-gradient">

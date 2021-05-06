@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Typography, Button } from "@material-ui/core";
+import { Typography, Button, Container } from "@material-ui/core";
 
 const Header = () => {
   return (
     <React.Fragment>
       <header class="masthead text-center text-white">
         <div class="masthead-content">
-          <div class="container">
+          <Container>
             <Typography
               class="masthead-heading mb-0"
               variant="h1"
@@ -32,7 +32,7 @@ const Header = () => {
             >
               Let's Start
             </Button>
-          </div>
+          </Container>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
         <div class="bg-circle-2 bg-circle"></div>
