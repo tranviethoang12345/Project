@@ -43,7 +43,7 @@ const Navbar = () => {
           {/* Left */}
           
           <Typography class="navbar-brand" component={Link} to="/home">
-            {user.result.username}
+            {user.result.name}
           </Typography>
           <button
             class="navbar-toggler"

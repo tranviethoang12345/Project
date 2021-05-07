@@ -39,7 +39,7 @@ const PostForm = ({ currentId, setCurrentId }) => {
     clear();
   };
 
-  if (!user?.result?.username) {
+  if (!user?.result?.name) {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
