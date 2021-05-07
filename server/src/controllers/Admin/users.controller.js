@@ -14,7 +14,7 @@ exports.getUsers = async (req, res) => {
 
 // create and save new user
 exports.createUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const existingUser = await userModel.findOne({ email: email });
@@ -23,7 +23,7 @@ exports.createUser = async (req, res) => {
       return res.status(200).json({ message: "User already exist" });
     }
     
-    const result = await userModel.create({ name: name, email: email, password: password });
+    const result = await userModel.create({ name: username, email: email, password: password });
 
     res.status(200).json(result);
   } catch (error) {
