@@ -4,10 +4,9 @@ const userModel = require('../models/users.model');
 
 exports.adminAccount = async (req, res, next) => {
   try {
-    let name = 'admin';
+    let username = 'admin';
     let password = '12345678';
     let email = 'admin@gmail.com';
-    let status = 'Active';
     let roleId = '604b2d3f36b2fd0610004e0c';
 
     let accountRecord = await userModel.findOne({ email });
@@ -15,10 +14,9 @@ exports.adminAccount = async (req, res, next) => {
       return next();
     }
     await userModel.create({
-      name,
+      username,
       email,
       password,
-      status,
       roleId,
     });
 

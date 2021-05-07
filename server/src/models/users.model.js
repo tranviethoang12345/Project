@@ -7,7 +7,7 @@ const { Schema } = mongoose;
 // User Detail
 const userSchema = new Schema(
   {
-    name: {
+    username: {
       type: String,
       trim: true,
     },
@@ -28,6 +28,8 @@ const userSchema = new Schema(
 
     status: {
       type: String,
+      default : 'active',
+      enum: ['active', 'inactive']
     },
 
     roleId: {

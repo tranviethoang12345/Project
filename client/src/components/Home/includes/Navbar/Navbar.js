@@ -3,7 +3,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
-import { Typography, Container } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 
 const Navbar = () => {

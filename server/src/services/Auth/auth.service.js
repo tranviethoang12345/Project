@@ -37,7 +37,7 @@ exports.signUp = async (req, res) => {
       return res.status(404).json({ message: "User already exist." });
     }
 
-    const result = await userModel.create({email: email, password: password,  name:username });
+    const result = await userModel.create({email: email, password: password,  username: username });
 
     const token = tokenHelper.signToken(
       { email: result.email, id: result._id },
