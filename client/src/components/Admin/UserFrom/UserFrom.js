@@ -4,6 +4,8 @@ import {
   Button,
   Typography,
   Paper,
+  InputAdornment,
+  IconButton,
   FormGroup,
   FormControl,
   FormControlLabel,
@@ -12,6 +14,10 @@ import {
   RadioGroup,
   Checkbox,
 } from '@material-ui/core';
+
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
@@ -20,43 +26,49 @@ import { createUser, updateUser } from '../../../actions/Admin/User';
 const UserFrom = ({ currentId, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const [userData, setPostData] = useState({
+
+  const [userData, setUserData] = useState({
     username: '',
     email: '',
+    password: '',
     status: '',
     role: '',
   });
-  const [value, setValue] = React.useState('deActive');
+  const [value, setValue] = useState('active');
+  const [showPassword, setShowPassword] = useState(false);
 
   const user = useSelector((state) =>
     currentId ? state.posts.find((p) => p._id === currentId) : null
   );
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
   useEffect(() => {
-    if (user) setPostData(user);
+    if (user) setUserData(user);
   }, [user]);
+
+  const handleShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (currentId === 0 || currentId === null) {
-      dispatch(createUser({ ...userData, name: user?.result?.name }));
+      dispatch(createUser({ ...userData }));
     } else {
-      dispatch(
-        updateUser(currentId, { ...userData, name: user?.result?.name })
-      );
+      dispatch(updateUser(currentId, { ...userData }));
     }
     clear();
   };
 
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
   const clear = () => {
     setCurrentId(null);
-    setPostData({
+    setUserData({
       username: '',
       email: '',
+      password: '',
       status: '',
       role: '',
     });
@@ -81,20 +93,73 @@ const UserFrom = ({ currentId, setCurrentId }) => {
           label="Username"
           fullWidth
           value={userData.username}
-          onChange={(e) => setPostData({ ...userData, title: e.target.value })}
+          onChange={(e) =>
+            setUserData({ ...userData, username: e.target.value })
+          }
         />
 
-        {/* Message */}
+        {/* Email */}
         <TextField
           name="email"
           variant="outlined"
           label="Email"
           fullWidth
           value={userData.email}
+          onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+        />
+
+        {/* Password */}
+        <TextField
+          name="password"
+          variant="outlined"
+          label="Password"
+          type={showPassword ? 'text' : 'password'}
+          fullWidth
+          value={userData.password}
           onChange={(e) =>
-            setPostData({ ...userData, message: e.target.value })
+            setUserData({ ...userData, password: e.target.value })
+          }
+          InputProps={
+            'password'
+              ? {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={handleShowPassword}>
+                        {'password' ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }
+              : null
           }
         />
+
+        {/* Repeat Password
+        <TextField
+          name="confirmPassword"
+          variant="outlined"
+          label="Repeat Password"
+          type={showPassword ? 'text' : 'password'}
+          fullWidth
+          value={userData.confirmPassword}
+          onChange={(e) =>
+            setUserData({ ...userData, confirmPassword: e.target.value })
+          }
+
+          InputProps={
+            'confirmPassword'
+              ? {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={handleShowPassword}>
+                        {'password' ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }
+              : null
+          }
+        /> */}
 
         {/* Status */}
         <FormControl
@@ -110,21 +175,28 @@ const UserFrom = ({ currentId, setCurrentId }) => {
             value={value}
             onChange={handleChange}
           >
-            <FormControlLabel
-              value="inactive"
-              control={<Radio color="primary" />}
-              label="Inactive"
-            />
+            {/* Active */}
             <FormControlLabel
               value="active"
               control={<Radio color="primary" />}
               label="Active"
             />
+
+            {/* Inactive */}
+            <FormControlLabel
+              value="inactive"
+              control={<Radio color="primary" />}
+              label="Inactive"
+            />
           </RadioGroup>
         </FormControl>
 
         {/* Roles */}
-        <FormControl component="fieldset" fullWidth className={classes.formRoles}>
+        <FormControl
+          component="fieldset"
+          fullWidth
+          className={classes.formRoles}
+        >
           <FormLabel component="legend">Roles (process)</FormLabel>
           <FormGroup row>
             <FormControlLabel

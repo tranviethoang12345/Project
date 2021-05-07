@@ -31,12 +31,12 @@ const Social = () => {
   };
 
   return (
-    <div className="social-media">
+    <div class="social-media">
       <FacebookLogin
         appId="330839701966654"
         autoLoad={false}
         render={(renderProps) => (
-          <Button className="social-icon" onClick={renderProps.onClick}>
+          <Button class="social-icon" onClick={renderProps.onClick}>
             <i class="fab fa-facebook-f"></i>
           </Button>
         )}
@@ -48,7 +48,7 @@ const Social = () => {
       <GoogleLogin
         clientId="514550539871-ib8ne88cdovra2vci2nhs3911hrsp18h.apps.googleusercontent.com"
         render={(renderProps) => (
-          <Button className="social-icon" onClick={renderProps.onClick}>
+          <Button class="social-icon" onClick={renderProps.onClick}>
             <i class="fab fa-google"></i>
           </Button>
         )}
@@ -57,11 +57,11 @@ const Social = () => {
         cookiePolicy="single_host_origin"
       />
 
-      <button className="social-icon">
+      <button class="social-icon">
         <i class="fab fa-twitter"></i>
       </button>
 
-      <button className="social-icon">
+      <button class="social-icon">
         <i class="fab fa-linkedin-in"></i>
       </button>
     </div>

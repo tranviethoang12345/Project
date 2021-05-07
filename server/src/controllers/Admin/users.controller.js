@@ -14,15 +14,18 @@ exports.getUsers = async (req, res) => {
 
 // create and save new user
 exports.createUser = async (req, res) => {
-  const user = req.body;
-
-  const newUser = new userModel({
-    ...user,
-  });
+  const { username, email, password } = req.body;
 
   try {
-    await user.save();
-    res.status(200).json(newUser);
+    const existingUser = await userModel.findOne({ email: email });
+
+    if (existingUser) {
+      return res.status(200).json({ message: "User already exist" });
+    }
+    
+    const result = await userModel.create({ username: username, email: email, password: password });
+
+    res.status(200).json(result);
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong.' });
   }

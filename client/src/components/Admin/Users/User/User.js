@@ -10,7 +10,7 @@ import {
 } from '../../../../common/TableStyles';
 import { deleteUser } from '../../../../actions/Admin/User';
 
-const User = ({ user, ID }) => {
+const User = ({ user, ID, setCurrentId }) => {
   const dispatch = useDispatch();
   return (
     <StyledTableRow key={user._id}>
@@ -24,18 +24,21 @@ const User = ({ user, ID }) => {
 
       {/* Update */}
       <StyledTableCell align="center">
-        <Button class="btn border-shadow update">
+        <Button
+          class="btn border-shadow update"
+          onClick={() => setCurrentId(user._id)}
+        >
           <span class="text-gradient">
             <i class="fas fa-pencil-alt"></i>
           </span>
         </Button>
       </StyledTableCell>
-      
+
       {/* Delete */}
       <StyledTableCell align="center">
         <Button
           class="btn border-shadow delete"
-          onClick={() => dispatch(deleteUser(User._id))}
+          onClick={() => dispatch(deleteUser(user._id))}
         >
           <span class="text-gradient">
             <i class="fas fa-times"></i>

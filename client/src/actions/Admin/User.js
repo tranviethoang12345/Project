@@ -15,6 +15,7 @@ export const getUsers = () => async (dispatch) => {
 // Action Create User
 export const createUser = (user) => async (dispatch) => {
   try {
+    debugger
     const { data } = await api.createUser(user);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {

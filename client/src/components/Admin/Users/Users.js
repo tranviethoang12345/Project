@@ -44,7 +44,7 @@ const Users = ({ setCurrentId }) => {
         </TableHead>
         <TableBody>
           {users.map((user, index) => (
-            <User user={user} ID={index+1} />
+            <User user={user} ID={index + 1} setCurrentId={setCurrentId} />
           ))}
         </TableBody>
       </Table>

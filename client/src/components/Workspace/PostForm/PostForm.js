@@ -43,7 +43,7 @@ const PostForm = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In to create your own post and like other's post.
+          Please Sign In to create your own account.
         </Typography>
       </Paper>
     );

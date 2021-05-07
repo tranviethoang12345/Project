@@ -18,7 +18,10 @@ export const signUp = (formData) => API.post('/signUp', formData);
 
 // Admin - User
 export const fetchUsers = () => API.get('/admin/users');
-export const createUser = (newUser) => API.post('/admin/users', newUser);
+export const createUser = (newUser) => {
+  debugger
+  return API.post('/admin/users', newUser);
+}
 export const updateUser = (id, updatedUser) =>
   API.patch(`/admin/users/${id}`, updatedUser);
 export const deleteUser = (id) => API.delete(`/admin/users/${id}`);
