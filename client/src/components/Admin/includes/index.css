@@ -32,10 +32,6 @@ a {
   justify-content: space-between;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .border-shadow {
   border: 1px solid var(--border-btn);
   box-shadow: 1px 3px 10px;
@@ -58,12 +54,6 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-#header nav {
-  background-color: #06d6a0;
-  padding: 1em 0;
-  width: 100%;
 }
 
 #site-main {

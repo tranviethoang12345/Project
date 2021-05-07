@@ -42,6 +42,7 @@ app.use(
 io.on('connection', (socket) => {
   // Welcome current user
   socket.emit('me', socket.id);
+  console.log(('me', socket.id));
   
    // Runs when client disconnects
   socket.on('disconnect', () => {

@@ -8,15 +8,11 @@ const Header = () => {
   return (
     <AppBar className={classes.AdminHome_appBar} position="static">
       <Container>
-          <nav>
-            <Container>
-              <div class="text-center">
-                <Button class="nav-brand text-dark" component={Link} to="/home">
-                  User Management System
-                </Button>
-              </div>
-            </Container>
-          </nav>
+        <Typography align="center">
+          <Button class="nav-brand text-dark" component={Link} to="/home">
+            User Management System
+          </Button>
+        </Typography>
       </Container>
     </AppBar>
   );

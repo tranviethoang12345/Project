@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow,
+  LinearProgress,
+  Paper,
+  Button,
+} from "@material-ui/core";
 
-import { Grid, LinearProgress, Container } from "@material-ui/core";
-
-import User from "./User/User";
-import UsersT from "./UsersT"
 import useStyles from "./styles";
+import { StyledTableCell, StyledTableRow } from "../../../common/TableStyles"
+import { deleteUser } from "../../../actions/Admin/User";
 
 const Users = ({ setCurrentId }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
   const [progress, setProgress] = useState();
@@ -28,25 +37,61 @@ const Users = ({ setCurrentId }) => {
       clearInterval(timer);
     };
   }, []);
-
   return !users.length ? (
     <div className={classes.root}>
       <LinearProgress variant="determinate" value={progress} />
     </div>
   ) : (
-    <Grid>
-      <Container>
-        {/* include show all */}
-        <UsersT />
-        <tbody>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell align="right">Name</StyledTableCell>
+            <StyledTableCell align="right">Email</StyledTableCell>
+            <StyledTableCell align="right">
+              Status<br></br>(Process)
+            </StyledTableCell>
+            <StyledTableCell align="right">
+              Role<br></br>(Process)
+            </StyledTableCell>
+            <StyledTableCell align="right">Update<br></br>Action&nbsp;(s)</StyledTableCell>
+            <StyledTableCell align="right">Delete<br></br>Action&nbsp;(s)</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {users.map((user) => (
-            <Grid key={user._id}>
-              <User user={user} />
-            </Grid>
+            <StyledTableRow key={user._id}>
+              <StyledTableCell component="th" scope="row">
+                1
+              </StyledTableCell>
+              <StyledTableCell align="right">{user.name}</StyledTableCell>
+              <StyledTableCell align="right">{user.email}</StyledTableCell>
+              <StyledTableCell align="right">{user.status}</StyledTableCell>
+              <StyledTableCell align="right">role</StyledTableCell>
+              <StyledTableCell align="center">
+                  {/* Update */}
+                  <Button class="btn border-shadow update">
+                    <span class="text-gradient">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </Button>
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                <Button
+                  class="btn border-shadow delete"
+                  onClick={() => dispatch(deleteUser(Users._id))}
+                >
+                  <span class="text-gradient">
+                    <i class="fas fa-times"></i>
+                  </span>
+                </Button>
+              </StyledTableCell>
+            </StyledTableRow>
           ))}
-        </tbody>
-      </Container>
-    </Grid>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
