@@ -39,12 +39,13 @@ const PostForm = ({ currentId, setCurrentId }) => {
     clear();
   };
 
-  if (!user?.result?.name) {
+  if (!user?.result?.username) {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
           Please Sign In to create your own account.
         </Typography>
+        
       </Paper>
     );
   }

@@ -20,6 +20,7 @@ const Navbar = () => {
     setUser(null);
   };
 
+  console.log(user);
   useEffect(() => {
     const token = user?.token;
 
@@ -40,8 +41,9 @@ const Navbar = () => {
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
           {/* Left */}
+          
           <Typography class="navbar-brand" component={Link} to="/home">
-            {user.result.name}
+            {user.result.username}
           </Typography>
           <button
             class="navbar-toggler"
