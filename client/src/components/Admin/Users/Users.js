@@ -26,7 +26,7 @@ const Users = ({ setCurrentId }) => {
         <TableHead>
           <TableRow>
             <StyledTableCell>ID</StyledTableCell>
-            <StyledTableCell align="left">Username</StyledTableCell>
+            <StyledTableCell align="left">Name</StyledTableCell>
             <StyledTableCell align="left">Email</StyledTableCell>
             <StyledTableCell align="right">
               Status<br></br>(Process)

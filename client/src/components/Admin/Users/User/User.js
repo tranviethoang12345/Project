@@ -17,7 +17,7 @@ const User = ({ user, ID, setCurrentId }) => {
       <StyledTableCell component="th" scope="row">
         {ID}
       </StyledTableCell>
-      <StyledTableCell align="left">{user.username}</StyledTableCell>
+      <StyledTableCell align="left">{user.name}</StyledTableCell>
       <StyledTableCell align="left">{user.email}</StyledTableCell>
       <StyledTableCell align="right">{user.status}</StyledTableCell>
       <StyledTableCell align="right">role</StyledTableCell>

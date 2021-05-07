@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   const user = JSON.parse(localStorage.getItem('profile'));
-  if (!user?.result?.username) {
+  if (!user?.result?.name) {
     return (
       <Paper align="center">
         <Typography variant="h6">
