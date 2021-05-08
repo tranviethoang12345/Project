@@ -34,4 +34,10 @@ router.delete('/:id', workspaceController.deletePost);
  */
 router.patch('/:id/likePost', workspaceController.likePost);
 
+/**
+ * @description Workspace - Download Post
+ * @method Patch /:id/likePost
+ */
+ router.get('/download/:id',  workspaceController.downloadPost);
+
 module.exports = router;

@@ -1,32 +1,32 @@
 // Import NPM
-const app = require("express")();
+const app = require('express')();
 // const app = express();
-const session = require("express-session");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const server = require("http").Server(app);
-const io = require("socket.io")(server, {
+const server = require('http').Server(app);
+const io = require('socket.io')(server, {
   cors: {
-    origin: "*",
-    method: ["GET", "POST"],
+    origin: '*',
+    method: ['GET', 'POST'],
   },
 });
 
-const morgan = require("morgan");
-const { v4: uuidV4 } = require("uuid");
+const morgan = require('morgan');
+const { v4: uuidV4 } = require('uuid');
 
 // Config Env
-require("dotenv").config({ path: ".env" });
+require('dotenv').config({ path: '.env' });
 
 // Connect Database
-require("./config/database");
+require('./config/database');
 
 // Setting for accepting post form data (body-parser)
 // parse requests of content-type - application/json
-app.use(bodyParser.json({ limit: "30mb", extended: true })); // Limit the Img which are heavy
+app.use(bodyParser.json({ limit: '30mb', extended: true })); // Limit the Img which are heavy
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 // Create session
@@ -43,8 +43,8 @@ io.on('connection', (socket) => {
   // Welcome current user
   socket.emit('me', socket.id);
   console.log(('me', socket.id));
-  
-   // Runs when client disconnects
+
+  // Runs when client disconnects
   socket.on('disconnect', () => {
     socket.broadcast.emit('callEnded');
   });
@@ -62,20 +62,20 @@ io.on('connection', (socket) => {
 // Morgan Logger
 // let accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), { flags: 'a'})
 // app.use(morgan('tiny', { stream: accessLogStream }));
-app.use(morgan("tiny"));
+app.use(morgan('tiny'));
 
 // Default Admin Account
-const defaultAccount = require("./middleware/defaultAccount.middleware");
+const defaultAccount = require('./middleware/defaultAccount.middleware');
 app.use(defaultAccount.adminAccount);
 
 // Import Routes
-const postRoutes = require("./config/routes");
+const postRoutes = require('./config/routes');
 // Routes
-app.use("/", postRoutes);
+app.use('/', postRoutes);
 
 // Testing
 app.get('/', (req, res) => {
-  res.send('Hello to Backend API!')
-})
+  res.send('Hello to Backend API!');
+});
 
 module.exports = server;

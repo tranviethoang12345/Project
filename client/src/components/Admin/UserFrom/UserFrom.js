@@ -28,7 +28,7 @@ const UserFrom = ({ currentId, setCurrentId }) => {
   const classes = useStyles();
 
   const [userData, setUserData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     status: '',
@@ -66,7 +66,7 @@ const UserFrom = ({ currentId, setCurrentId }) => {
   const clear = () => {
     setCurrentId(null);
     setUserData({
-      name: '',
+      username: '',
       email: '',
       password: '',
       status: '',
@@ -88,13 +88,15 @@ const UserFrom = ({ currentId, setCurrentId }) => {
 
         {/* Title */}
         <TextField
-          name="name"
+          name="username"
           variant="outlined"
           label="Username"
+          required
+          autoFocus
           fullWidth
-          value={userData.name}
+          value={userData.username}
           onChange={(e) =>
-            setUserData({ ...userData, name: e.target.value })
+            setUserData({ ...userData, username: e.target.value })
           }
         />
 
@@ -102,7 +104,10 @@ const UserFrom = ({ currentId, setCurrentId }) => {
         <TextField
           name="email"
           variant="outlined"
+          type="email"
           label="Email"
+          required
+          autoFocus
           fullWidth
           value={userData.email}
           onChange={(e) => setUserData({ ...userData, email: e.target.value })}
@@ -114,6 +119,8 @@ const UserFrom = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Password"
           type={showPassword ? 'text' : 'password'}
+          required
+          autoFocus
           fullWidth
           value={userData.password}
           onChange={(e) =>

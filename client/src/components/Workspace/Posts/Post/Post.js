@@ -16,7 +16,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 
 import useStyles from './styles';
-import { deletePost, likePost } from '../../../../actions/Workspace/posts';
+import { deletePost, likePost, downloadPost } from '../../../../actions/Workspace/posts';
 
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
@@ -50,8 +50,6 @@ const Post = ({ post, setCurrentId }) => {
       </>
     );
   };
-
-  const download = () => {};
 
   return (
     <Card className={classes.card}>
@@ -115,7 +113,7 @@ const Post = ({ post, setCurrentId }) => {
           downloadName="file"
           title={post.title}
           fullWidth
-          onClick={download}
+          onClick={() => dispatch(downloadPost(post._id))}
         >
           Download
         </Button>

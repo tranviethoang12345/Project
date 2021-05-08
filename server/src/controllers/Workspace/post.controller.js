@@ -1,6 +1,21 @@
 const postModel = require('../../models/postMessage.model');
 const mongoose = require('mongoose');
 
+// var multer = require('multer');
+// const fs = require('fs');
+// const uploadsFolder = './uploads';
+
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, uploadsFolder);
+//   },
+//   selectedFile: function (req, file, cb) {
+//     cb(null, Date.now() + path.extname(file.originalName)); //Appending extension
+//   },
+// });
+
+// var upload = multer({ dest: 'uploads/', storage: storage });
+
 // get all post
 exports.getPosts = async (req, res) => {
   try {
@@ -21,7 +36,7 @@ exports.createPost = async (req, res) => {
     creator: req.userId,
     createdAt: new Date().toISOString(),
   });
-  
+
   try {
     await newPost.save();
     res.status(200).json(newPost);
@@ -47,11 +62,13 @@ exports.updatePost = async (req, res) => {
 // delete a post with specified post id in the request
 exports.deletePost = async (req, res) => {
   const { id } = req.params;
+  // const filePath = req.query.filePath;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No post with id: ${id}`);
 
   await postModel.findByIdAndDelete(id);
+  // fs.unlinkSync(filePath);
 
   res.json({ message: 'Post Deleted successfully' });
 };
@@ -81,4 +98,15 @@ exports.likePost = async (req, res) => {
   });
 
   res.json(updatedPost);
+};
+
+exports.downloadPost = async (req, res) => {
+  try {
+    const filePath = req.query.body;
+
+    const absoluteFilePath = path.resolve(__dirname, filePath);
+    res.sendFile(absoluteFilePath);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
 };

@@ -45,7 +45,6 @@ const PostForm = ({ currentId, setCurrentId }) => {
         <Typography variant="h6" align="center">
           Please Sign In to create your own account.
         </Typography>
-        
       </Paper>
     );
   }
@@ -130,8 +129,8 @@ const PostForm = ({ currentId, setCurrentId }) => {
           <FileBase
             type="file"
             multiple={false}
-            onDone={({ base64 }) =>
-              setPostData({ ...postData, selectedFile: base64 })
+            onChange={(e) =>
+              setPostData({ ...postData, selectedFile: e.target.value })
             }
           />
         </div>

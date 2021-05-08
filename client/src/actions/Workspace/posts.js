@@ -4,6 +4,7 @@ import {
   UPDATE,
   DELETE,
   LIKE,
+  DOWNLOAD
 } from '../../constants/actionTypes';
 import * as api from '../../api';
 
@@ -60,3 +61,14 @@ export const likePost = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+
+// Action Download Post
+export const downloadPost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.downloadPost(id);
+
+    dispatch({ type: DOWNLOAD, payload: data });
+  } catch (error) {
+    console.log(error)
+  }
+}
